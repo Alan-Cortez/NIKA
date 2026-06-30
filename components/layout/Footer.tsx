@@ -61,10 +61,10 @@ export default function Footer() {
               <strong>Facebook:</strong> Aned De la cruz
             </p>
             <p className="text-sm text-slate-600">
-              <strong>WhatsApp:</strong> +1 (878) 790-0869
+              <strong>WhatsApp:</strong> +52 (878) 790-0869
             </p>
             <p className="text-sm text-slate-600">
-              <strong>Correo:</strong> hola@maestraaned.com
+              <strong>Correo:</strong> anedvictoria@gmail.com.com
             </p>
           </div>
         </div>
@@ -78,7 +78,7 @@ export default function Footer() {
               <Phone className="h-4 w-4 text-aned-teal" /> +1 (878) 790-0869
             </span>
             <span className="flex items-center gap-1">
-              <Mail className="h-4 w-4 text-aned-teal" /> hola@maestraaned.com
+              <Mail className="h-4 w-4 text-aned-teal" /> anedvictoria@gmail.com.com
             </span>
           </div>
         </div>

@@ -25,7 +25,7 @@ export default function Contact() {
                 <div>
                   <p className="font-bold text-slate-800">Ubicación</p>
                   <p className="text-sm text-slate-600">
-                    Ciudad de México, México
+                    Allende Coahuila, México
                   </p>
                 </div>
               </li>
@@ -35,7 +35,7 @@ export default function Contact() {
                 </span>
                 <div>
                   <p className="font-bold text-slate-800">Teléfono</p>
-                  <p className="text-sm text-slate-600">+1 (878) 790-0869</p>
+                  <p className="text-sm text-slate-600">+52 (878) 790-0869</p>
                 </div>
               </li>
               <li className="flex items-start gap-4">
@@ -44,7 +44,7 @@ export default function Contact() {
                 </span>
                 <div>
                   <p className="font-bold text-slate-800">Correo</p>
-                  <p className="text-sm text-slate-600">hola@maestraaned.com</p>
+                  <p className="text-sm text-slate-600">anedvictoria@gmail.com.com</p>
                 </div>
               </li>
               <li className="flex items-start gap-4">
@@ -62,7 +62,7 @@ export default function Contact() {
           <div className="overflow-hidden rounded-3xl shadow-xl">
             <iframe
               title="Mapa de ubicación"
-              src="https://maps.google.com/maps?q=Ciudad%20de%20Mexico&t=&z=13&ie=UTF8&iwloc=&output=embed"
+              src="https://www.google.com/maps?q=28.3560913,-100.8652254&z=17&output=embed"
               className="h-[420px] w-full border-0"
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
