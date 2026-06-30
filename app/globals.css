@@ -1,0 +1,91 @@
+@import "tailwindcss";
+
+:root {
+  --aned-orange: #f97316;
+  --aned-orange-dark: #ea580c;
+  --aned-teal: #0d9488;
+  --aned-teal-dark: #0f766e;
+  --aned-blue: #2563eb;
+  --aned-blue-dark: #1d4ed8;
+  --aned-red: #dc2626;
+  --aned-cream: #fef7ed;
+  --aned-purple: #7c3aed;
+  --aned-gold: #fbbf24;
+  --background: #ffffff;
+  --foreground: #1e293b;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-aned-orange: var(--aned-orange);
+  --color-aned-orange-dark: var(--aned-orange-dark);
+  --color-aned-teal: var(--aned-teal);
+  --color-aned-teal-dark: var(--aned-teal-dark);
+  --color-aned-blue: var(--aned-blue);
+  --color-aned-blue-dark: var(--aned-blue-dark);
+  --color-aned-red: var(--aned-red);
+  --color-aned-cream: var(--aned-cream);
+  --color-aned-purple: var(--aned-purple);
+  --color-aned-gold: var(--aned-gold);
+  --font-sans: var(--font-nunito);
+  --font-display: var(--font-fredoka);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-nunito), system-ui, sans-serif;
+}
+
+.wave-top {
+  clip-path: ellipse(120% 100% at 50% 100%);
+}
+
+.wave-bottom {
+  clip-path: ellipse(120% 100% at 50% 0%);
+}
+
+.section-title {
+  font-family: var(--font-fredoka), system-ui, sans-serif;
+}
+
+.doodle-bg {
+  background-image:
+    radial-gradient(circle at 10% 20%, rgba(251, 191, 36, 0.15) 0, transparent 40%),
+    radial-gradient(circle at 90% 80%, rgba(13, 148, 136, 0.12) 0, transparent 35%),
+    radial-gradient(circle at 70% 10%, rgba(249, 115, 22, 0.1) 0, transparent 30%);
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes chat-pop {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.chat-pop {
+  animation: chat-pop 0.25s ease-out;
+}
