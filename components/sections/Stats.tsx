@@ -1,10 +1,14 @@
 import { GraduationCap, HeartHandshake, Smile, Users } from "lucide-react";
 
 const stats = [
-  { icon: Users, value: "150+", label: "Alumnos formados" },
-  { icon: GraduationCap, value: "12+", label: "Años de experiencia" },
-  { icon: HeartHandshake, value: "98%", label: "Familias satisfechas" },
-  { icon: Smile, value: "100%", label: "Con atención cercana" },
+  {
+    icon: GraduationCap,
+    value: "+2 años",
+    label: "de exp. en colegios y centros de apoyo",
+  },
+  { icon: HeartHandshake, value: "90%", label: "de familias satisfechas" },
+  { icon: Users, value: "Inicial a secundaria", label: "acompañamiento por etapa" },
+  { icon: Smile, value: "1 a 1", label: "atención cercana y personalizada" },
 ];
 
 export default function Stats() {

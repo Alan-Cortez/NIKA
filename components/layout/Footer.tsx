@@ -40,7 +40,7 @@ export default function Footer() {
         <div>
           <h4 className="section-title mb-4 font-bold text-slate-800">Explorar</h4>
           <ul className="space-y-2 text-sm text-slate-600">
-            <li><a href="#blog" className="hover:text-aned-orange">Noticias</a></li>
+            <li><a href="#clases" className="hover:text-aned-orange">Clases particulares</a></li>
             <li><a href="#contacto" className="hover:text-aned-orange">Contacto</a></li>
           </ul>
           <div className="mt-4 flex gap-3">

@@ -54,7 +54,7 @@ export default function Chatbot() {
           <div className="flex items-center justify-between bg-aned-teal px-4 py-3 text-white">
             <div>
               <p className="section-title font-bold">Asistente Aned</p>
-              <p className="text-xs text-teal-100">Respuestas predefinidas</p>
+              <p className="text-xs text-teal-100">Orientación cercana para mamás y papás</p>
             </div>
             <button
               type="button"
@@ -104,7 +104,7 @@ export default function Chatbot() {
                 type="text"
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
-                placeholder="Escribe tu pregunta…"
+                placeholder="Escribe tu duda sobre clases, costos o inscripción…"
                 className="flex-1 rounded-full border border-slate-200 px-4 py-2.5 text-sm outline-none focus:border-aned-teal focus:ring-2 focus:ring-aned-teal/20"
               />
               <button

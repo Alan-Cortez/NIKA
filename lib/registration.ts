@@ -1,7 +1,8 @@
 export const GRADOS = [
   "Inicial (2-3 años)",
   "Preescolar (3-5 años)",
-  "Primaria básica (6-8 años)",
+  "Primaria (6-11 años)",
+  "Secundaria (12-15 años)",
   "Apoyo personalizado",
 ] as const;
 

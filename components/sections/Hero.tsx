@@ -1,39 +1,32 @@
 import Image from "next/image";
-import { Sparkles } from "lucide-react";
 
 export default function Hero() {
   return (
     <section id="inicio" className="doodle-bg relative overflow-hidden pt-28 pb-20 lg:pt-36 lg:pb-28">
-      <div className="pointer-events-none absolute right-10 top-32 hidden text-aned-gold opacity-40 lg:block">
-        <Sparkles className="h-8 w-8 animate-float" />
-      </div>
-      <div className="pointer-events-none absolute bottom-20 left-10 hidden text-aned-teal opacity-30 lg:block">
-        <Sparkles className="h-6 w-6 animate-float" style={{ animationDelay: "1s" }} />
-      </div>
-
       <div className="mx-auto grid max-w-7xl items-center gap-12 px-4 lg:grid-cols-2 lg:px-8">
         <div className="space-y-6">
           <span className="inline-block rounded-full bg-aned-teal/10 px-4 py-1.5 text-sm font-bold text-aned-teal">
-            Educación personalizada con amor
+            Clases particulares con atención personalizada
           </span>
           <h1 className="section-title text-4xl font-bold leading-tight text-slate-900 sm:text-5xl lg:text-6xl">
-            Acompañamiento educativo{" "}
-            <span className="text-aned-orange">para el crecimiento</span> de tu hijo
+            Apoyo escolar y{" "}
+            <span className="text-aned-orange">clases particulares</span> para avanzar con seguridad
           </h1>
           <p className="max-w-lg text-lg text-slate-600">
-            Maestra Aned acompaña a cada niño con paciencia, dedicación y excelencia.
-            Un espacio seguro donde aprenden, crecen y fortalecen su confianza.
+            Maestra Aned acompaña a cada alumno con paciencia, dedicación y estrategias
+            adaptadas. Un apoyo cercano para reforzar aprendizaje, tareas y confianza
+            desde inicial hasta secundaria.
           </p>
           <div className="flex flex-wrap gap-4">
             <a
-              href="#nosotros"
-              className="rounded-full bg-aned-orange px-8 py-3.5 font-bold text-white shadow-lg transition hover:bg-aned-orange-dark"
+              href="#clases"
+              className="rounded-full bg-aned-orange px-8 py-3.5 font-bold text-white shadow-lg hover:bg-aned-orange-dark"
             >
-              Conocer más
+              Ver beneficios
             </a>
             <a
               href="#inscripcion"
-              className="rounded-full bg-aned-teal px-8 py-3.5 font-bold text-white shadow-lg transition hover:bg-aned-teal-dark"
+              className="rounded-full bg-aned-teal px-8 py-3.5 font-bold text-white shadow-lg hover:bg-aned-teal-dark"
             >
               Inscribir ahora
             </a>

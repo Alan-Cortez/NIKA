@@ -2,34 +2,38 @@ import Image from "next/image";
 
 const posts = [
   {
-    date: "15 Jun 2026",
-    title: "5 actividades creativas para aprender en casa",
+    title: "Refuerzo escolar con atención cercana",
+    description:
+      "Ideal para alumnos que necesitan apoyo en tareas, comprensión, lectura o seguimiento más personalizado.",
     image: "/images/reading.jpg",
   },
   {
-    date: "8 Jun 2026",
-    title: "Cómo fomentar la lectura con amor y paciencia",
+    title: "Experiencia en colegios y centros de apoyo",
+    description:
+      "La experiencia en distintos entornos educativos permite adaptar mejor cada clase a lo que tu hijo necesita.",
     image: "/images/classroom.jpg",
   },
   {
-    date: "1 Jun 2026",
-    title: "Celebrando el Día del Niño con actividades especiales",
+    title: "Comunicación clara con las familias",
+    description:
+      "Cada proceso busca que mamá o papá tengan información cercana sobre avances, necesidades y siguientes pasos.",
     image: "/images/hero.jpg",
   },
 ];
 
 export default function Blog() {
   return (
-    <section id="blog" className="relative bg-aned-red py-20 lg:py-28">
+    <section id="clases" className="relative bg-aned-red py-20 lg:py-28">
       <div className="absolute inset-x-0 -top-8 h-16 bg-aned-red wave-top" />
 
       <div className="mx-auto max-w-7xl px-4 lg:px-8">
         <div className="text-center text-white">
           <h2 className="section-title text-3xl font-bold sm:text-4xl">
-            Noticias y artículos recientes
+            ¿Por qué elegir estas clases particulares?
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-red-100">
-            Consejos, reflexiones y novedades del espacio educativo de Maestra Aned.
+            Esta página está enfocada en ayudar a más familias a encontrar un apoyo
+            escolar cercano, humano y adaptado a cada alumno.
           </p>
         </div>
 
@@ -49,15 +53,18 @@ export default function Blog() {
                 />
               </div>
               <div className="p-5">
-                <time className="text-xs font-bold uppercase text-aned-teal">
-                  {post.date}
-                </time>
                 <h3 className="section-title mt-2 text-lg font-bold text-slate-800">
                   {post.title}
                 </h3>
-                <span className="mt-3 inline-block text-sm font-semibold text-aned-orange">
-                  Leer más →
-                </span>
+                <p className="mt-3 text-sm leading-relaxed text-slate-600">
+                  {post.description}
+                </p>
+                <a
+                  href="#inscripcion"
+                  className="mt-4 inline-block text-sm font-semibold text-aned-orange"
+                >
+                  Solicitar informes →
+                </a>
               </div>
             </article>
           ))}

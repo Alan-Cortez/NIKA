@@ -16,17 +16,24 @@ const programs = [
     color: "bg-aned-teal",
   },
   {
-    title: "Primaria básica",
-    age: "6 – 8 años",
-    description: "Refuerzo académico con acompañamiento personalizado.",
+    title: "Primaria",
+    age: "6 – 11 años",
+    description: "Refuerzo en lectura, tareas, comprensión y acompañamiento escolar.",
     image: "/images/reading.jpg",
     color: "bg-aned-blue",
   },
   {
+    title: "Secundaria",
+    age: "12 – 15 años",
+    description: "Apoyo académico para reforzar materias, hábitos de estudio y seguridad.",
+    image: "/images/classroom.jpg",
+    color: "bg-aned-red",
+  },
+  {
     title: "Apoyo personalizado",
     age: "Todas las edades",
-    description: "Clases de refuerzo adaptadas al ritmo y necesidades de cada niño.",
-    image: "/images/classroom.jpg",
+    description: "Clases particulares adaptadas al ritmo y necesidades de cada alumno.",
+    image: "/images/hero.jpg",
     color: "bg-aned-purple",
   },
 ];
@@ -39,14 +46,15 @@ export default function Programs() {
       <div className="mx-auto max-w-7xl px-4 lg:px-8">
         <div className="text-center text-white">
           <h2 className="section-title text-3xl font-bold sm:text-4xl">
-            Acompañamos a cada niño según su edad y necesidad
+            Clases particulares según la etapa y necesidad de cada alumno
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-orange-100">
-            Programas diseñados con amor para que cada pequeño avance a su ritmo.
+            Desde inicial hasta secundaria, el apoyo se adapta al ritmo, edad y metas
+            de aprendizaje de cada familia.
           </p>
         </div>
 
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
           {programs.map((program) => (
             <article
               key={program.title}

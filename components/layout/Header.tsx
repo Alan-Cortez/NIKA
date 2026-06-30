@@ -9,7 +9,7 @@ const navLinks = [
   { href: "#nosotros", label: "Nosotros" },
   { href: "#programas", label: "Programas" },
   { href: "#inscripcion", label: "Inscripción" },
-  { href: "#blog", label: "Noticias" },
+  { href: "#clases", label: "Clases particulares" },
   { href: "#contacto", label: "Contacto" },
 ];
 
@@ -45,7 +45,7 @@ export default function Header() {
             <p className="section-title text-xl font-bold leading-none text-aned-blue">
               NIKA
             </p>
-            <p className="text-xs font-semibold text-aned-teal">Educación con amor</p>
+            <p className="text-xs font-semibold text-aned-teal">Clases particulares con amor</p>
           </div>
         </a>
 
@@ -54,14 +54,14 @@ export default function Header() {
             <a
               key={link.href}
               href={link.href}
-              className="text-sm font-semibold text-slate-700 transition hover:text-aned-orange"
+              className="text-sm font-semibold text-slate-700 hover:text-aned-orange"
             >
               {link.label}
             </a>
           ))}
           <a
             href="#inscripcion"
-            className="rounded-full bg-aned-orange px-5 py-2.5 text-sm font-bold text-white shadow-md transition hover:bg-aned-orange-dark"
+            className="rounded-full bg-aned-orange px-5 py-2.5 text-sm font-bold text-white shadow-md hover:bg-aned-orange-dark"
           >
             Inscribir ahora
           </a>
