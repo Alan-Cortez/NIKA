@@ -7,16 +7,164 @@ datasource db {
   provider = "sqlite"
 }
 
+// ─────────────────────────────────────────────
+// AUTH
+// ─────────────────────────────────────────────
+
+model Usuario {
+  id           String    @id @default(cuid())
+  email        String    @unique
+  passwordHash String
+  nombre       String
+  rol          String    @default("admin") // admin | maestra | staff
+  activo       Boolean   @default(true)
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+
+  sesiones    Sesion[]
+  actividades RegistroActividad[]
+}
+
+model Sesion {
+  id        String   @id @default(cuid())
+  token     String   @unique
+  usuarioId String
+  usuario   Usuario  @relation(fields: [usuarioId], references: [id], onDelete: Cascade)
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+  ipAddress String?
+  userAgent String?
+}
+
+// ─────────────────────────────────────────────
+// CURSOS (dinámicos, gestionados desde el panel)
+// ─────────────────────────────────────────────
+
+model Curso {
+  id           String   @id @default(cuid())
+  nombre       String
+  descripcion  String?
+  costoMensual Float    @default(0)
+  duracion     String? // ej: "1 hora", "45 min"
+  horario      String? // ej: "Lunes y Miércoles 4pm"
+  estado       String   @default("activo") // activo | inactivo
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  alumnos Alumno[]
+}
+
+// ─────────────────────────────────────────────
+// ALUMNOS (tabla unificada: landing + dashboard)
+// ─────────────────────────────────────────────
+
 model Alumno {
-  id                    String   @id @default(cuid())
-  nombreAlumno          String
-  fechaNacimiento       DateTime
-  grado                 String
-  nombreTutor           String
-  telefonoTutor         String
-  emailTutor            String
-  direccion             String?
-  consentimientoPadres  Boolean
-  nombreAutorizacion    String
-  createdAt             DateTime @default(now())
+  id String @id @default(cuid())
+
+  // ── Campos del registro público (landing page) ──
+  nombreAlumno         String
+  fechaNacimiento      DateTime
+  grado                String
+  nombreTutor          String
+  telefonoTutor        String
+  emailTutor           String
+  direccion            String?
+  consentimientoPadres Boolean
+  nombreAutorizacion   String
+
+  // ── Campos del dashboard ──
+  origen        String  @default("landing") // landing | dashboard
+  estado        String  @default("pendiente") // activo | inactivo | pendiente
+  notasInternas String?
+
+  // ── Relación con curso (asignado desde dashboard) ──
+  cursoId String?
+  curso   Curso?  @relation(fields: [cursoId], references: [id], onDelete: SetNull)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  pagos        Pago[]
+  asistencias  Asistencia[]
+  observaciones Observacion[]
+}
+
+// ─────────────────────────────────────────────
+// PAGOS
+// ─────────────────────────────────────────────
+
+model Pago {
+  id               String    @id @default(cuid())
+  alumnoId         String
+  alumno           Alumno    @relation(fields: [alumnoId], references: [id], onDelete: Cascade)
+  montoAcordado    Float
+  montoPagado      Float     @default(0)
+  estado           String    @default("pendiente") // pagado | pendiente | parcial | vencido
+  fechaPago        DateTime?
+  fechaVencimiento DateTime
+  mes              Int // 1-12
+  anio             Int
+  notas            String?
+  esAutomatico     Boolean   @default(false) // generado por mensualidades automáticas
+  createdAt        DateTime  @default(now())
+  updatedAt        DateTime  @updatedAt
+
+  detalles PagoDetalle[]
+}
+
+model PagoDetalle {
+  id        String   @id @default(cuid())
+  pagoId    String
+  pago      Pago     @relation(fields: [pagoId], references: [id], onDelete: Cascade)
+  monto     Float
+  fecha     DateTime @default(now())
+  notas     String?
+  createdAt DateTime @default(now())
+}
+
+// ─────────────────────────────────────────────
+// ASISTENCIA
+// ─────────────────────────────────────────────
+
+model Asistencia {
+  id       String   @id @default(cuid())
+  alumnoId String
+  alumno   Alumno   @relation(fields: [alumnoId], references: [id], onDelete: Cascade)
+  fecha    DateTime
+  presente Boolean  @default(true)
+  notas    String?
+  createdAt DateTime @default(now())
+
+  @@unique([alumnoId, fecha])
+}
+
+// ─────────────────────────────────────────────
+// OBSERVACIONES / AVANCES
+// ─────────────────────────────────────────────
+
+model Observacion {
+  id       String @id @default(cuid())
+  alumnoId String
+  alumno   Alumno @relation(fields: [alumnoId], references: [id], onDelete: Cascade)
+  texto    String
+  tipo     String @default("general") // general | academico | conductual | logro
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+// ─────────────────────────────────────────────
+// AUDITORÍA
+// ─────────────────────────────────────────────
+
+model RegistroActividad {
+  id         String   @id @default(cuid())
+  usuarioId  String?
+  usuario    Usuario? @relation(fields: [usuarioId], references: [id], onDelete: SetNull)
+  accion     String // crear | editar | eliminar | login | logout | generar_mensualidades
+  entidad    String // alumno | pago | curso | sesion | asistencia
+  entidadId  String?
+  detalle    String?
+  ipAddress  String?
+  createdAt  DateTime @default(now())
 }

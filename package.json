@@ -12,12 +12,16 @@
     "db:migrate": "prisma migrate dev",
     "db:bootstrap:turso": "node scripts/bootstrap-turso.mjs",
     "db:generate": "prisma generate",
-    "db:studio": "prisma studio"
+    "db:studio": "prisma studio",
+    "db:seed:admin": "node scripts/seed-admin.mjs",
+    "db:seed:admin:local": "node scripts/seed-admin-local.mjs"
   },
   "dependencies": {
     "@libsql/client": "^0.17.4",
     "@prisma/adapter-libsql": "^7.8.0",
     "@prisma/client": "^7.8.0",
+    "@types/bcryptjs": "^2.4.6",
+    "bcryptjs": "^3.0.3",
     "lucide-react": "^1.22.0",
     "next": "16.2.9",
     "nodemailer": "^9.0.1",

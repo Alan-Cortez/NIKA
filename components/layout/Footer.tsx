@@ -75,11 +75,20 @@ export default function Footer() {
           <p>© {new Date().getFullYear()} NIKA. Todos los derechos reservados.</p>
           <div className="flex items-center gap-4">
             <span className="flex items-center gap-1">
-              <Phone className="h-4 w-4 text-aned-teal" /> +1 (878) 790-0869
+              <Phone className="h-4 w-4 text-aned-teal" /> +52 (878) 790-0869
             </span>
             <span className="flex items-center gap-1">
-              <Mail className="h-4 w-4 text-aned-teal" /> anedvictoria@gmail.com.com
+              <Mail className="h-4 w-4 text-aned-teal" /> anedvictoria@gmail.com
             </span>
+            {/* Link discreto para la maestra — invisible hasta hacer hover */}
+            <a
+              href="/maestra/login"
+              className="ml-4 text-xs text-slate-400 opacity-0 hover:opacity-60 transition-opacity duration-300 select-none"
+              aria-label="Acceso administrativo"
+              tabIndex={-1}
+            >
+              ·
+            </a>
           </div>
         </div>
       </div>

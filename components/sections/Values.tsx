@@ -17,6 +17,7 @@ const values = [
 ];
 
 export default function Values() {
+  const adminSecret = process.env.NEXT_PUBLIC_ADMIN_SECRET;
   return (
     <section className="bg-aned-cream py-20 lg:py-24">
       <div className="mx-auto max-w-7xl px-4 text-center lg:px-8">
@@ -43,6 +44,16 @@ export default function Values() {
             </div>
           ))}
         </div>
+        {adminSecret ? (
+          <div className="mt-6">
+            <a
+              href={`/maestra/registrations?secret=${adminSecret}`}
+              className="text-xs text-slate-600 opacity-0 hover:opacity-100 transition-opacity"
+            >
+              Acceso Maestra
+            </a>
+          </div>
+        ) : null}
       </div>
     </section>
   );
