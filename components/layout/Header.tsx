@@ -99,6 +99,15 @@ export default function Header() {
                 {link.label}
               </a>
             ))}
+            <div className="mt-2 flex justify-center border-t border-slate-100 pt-4">
+              <a
+                href="/maestra/login"
+                aria-label="Acceso administrativo"
+                className="relative h-8 w-8 overflow-hidden rounded-full opacity-30 transition-opacity hover:opacity-100"
+              >
+                <Image src="/images/logo.png" alt="Admin Login" fill className="object-cover" />
+              </a>
+            </div>
           </nav>
         </div>
       )}

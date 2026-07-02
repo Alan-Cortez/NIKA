@@ -18,12 +18,14 @@ export async function login(
   prevState: AuthState,
   formData: FormData,
 ): Promise<AuthState> {
-  const email = formData.get("email") as string;
+  const emailRaw = formData.get("email") as string;
   const password = formData.get("password") as string;
 
-  if (!email || !password) {
+  if (!emailRaw || !password) {
     return { error: "Correo y contraseña son requeridos." };
   }
+
+  const email = emailRaw.toLowerCase().trim();
 
   const usuario = await prisma.usuario.findUnique({ where: { email } });
 
