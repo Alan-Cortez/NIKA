@@ -65,17 +65,14 @@ export default function Header() {
           >
             Inscribir ahora
           </a>
-          {/* Acceso discreto para la maestra — casi invisible */}
+          {/* Acceso discreto para la maestra */}
           <a
             href="/maestra/login"
             aria-label="Acceso administrativo"
             title="Acceso maestra"
-            className="text-slate-300 hover:text-slate-500 transition-colors duration-200 opacity-40 hover:opacity-100"
+            className="relative w-7 h-7 overflow-hidden rounded-full opacity-40 hover:opacity-100 transition-opacity duration-300 ring-2 ring-transparent hover:ring-aned-teal shadow-sm"
           >
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <rect width="18" height="11" x="3" y="11" rx="2" ry="2"/>
-              <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
-            </svg>
+            <Image src="/images/logo.png" alt="Admin Login" fill className="object-cover" />
           </a>
         </nav>
 

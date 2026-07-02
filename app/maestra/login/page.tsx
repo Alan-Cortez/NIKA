@@ -2,7 +2,8 @@
 
 import { login } from "@/app/actions/auth";
 import { useActionState } from "react";
-import { BookOpen, Eye, EyeOff, Loader2 } from "lucide-react";
+import { Eye, EyeOff, Loader2 } from "lucide-react";
+import Image from "next/image";
 import { useState } from "react";
 
 export default function LoginPage() {
@@ -22,8 +23,8 @@ export default function LoginPage() {
         <div className="bg-white/5 backdrop-blur-2xl border border-white/10 rounded-3xl shadow-2xl p-8 md:p-10">
           {/* Logo + Título */}
           <div className="flex flex-col items-center mb-8">
-            <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-aned-teal to-aned-teal-dark flex items-center justify-center shadow-lg mb-4">
-              <BookOpen className="text-white" size={28} strokeWidth={1.5} />
+            <div className="w-20 h-20 relative rounded-full overflow-hidden shadow-lg mb-4 ring-4 ring-white/10">
+              <Image src="/images/logo.png" alt="NIKA Logo" fill className="object-cover" />
             </div>
             <h1 className="text-2xl font-bold text-white font-display">
               NIKA Admin
@@ -96,7 +97,7 @@ export default function LoginPage() {
               type="submit"
               disabled={pending}
               id="login-submit"
-              className="w-full py-3.5 rounded-xl bg-gradient-to-r from-aned-teal to-teal-500 text-white font-semibold hover:from-teal-600 hover:to-teal-400 transition-all duration-200 shadow-lg shadow-teal-900/30 disabled:opacity-60 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+              className="w-full py-3.5 rounded-xl bg-gradient-to-r from-aned-orange to-aned-orange-dark text-white font-semibold hover:from-aned-orange-dark hover:to-[#c2410c] transition-all duration-200 shadow-lg shadow-orange-900/30 disabled:opacity-60 disabled:cursor-not-allowed flex items-center justify-center gap-2"
             >
               {pending ? (
                 <>
