@@ -56,7 +56,7 @@ export default function AlumnosClient({ alumnos, cursos }: { alumnos: Alumno[]; 
         </div>
         <button
           onClick={() => setIsModalOpen(true)}
-          className="flex items-center gap-2 bg-teal-600 text-white px-4 py-2.5 rounded-xl font-medium hover:bg-teal-700 transition-colors shadow-sm"
+          className="flex items-center gap-2 bg-aned-orange text-white px-4 py-2.5 rounded-xl font-medium hover:bg-aned-orange-dark transition-colors shadow-sm"
         >
           <Plus size={18} />
           <span>Nuevo Alumno</span>
@@ -143,7 +143,7 @@ export default function AlumnosClient({ alumnos, cursos }: { alumnos: Alumno[]; 
                     <td className="px-6 py-4 text-right">
                       <Link
                         href={`/maestra/dashboard/alumnos/${alumno.id}`}
-                        className="inline-flex items-center justify-center px-3 py-1.5 rounded-lg text-teal-600 bg-teal-50 hover:bg-teal-100 font-medium text-xs transition-colors"
+                        className="inline-flex items-center justify-center px-3 py-1.5 rounded-lg text-aned-teal bg-aned-cream hover:bg-teal-100 font-medium text-xs transition-colors"
                       >
                         Administrar
                       </Link>

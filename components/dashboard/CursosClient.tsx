@@ -66,7 +66,7 @@ export default function CursosClient({ cursos }: { cursos: Curso[] }) {
         </div>
         <button
           onClick={openNewModal}
-          className="flex items-center gap-2 bg-teal-600 text-white px-4 py-2.5 rounded-xl font-medium hover:bg-teal-700 transition-colors shadow-sm"
+          className="flex items-center gap-2 bg-aned-orange text-white px-4 py-2.5 rounded-xl font-medium hover:bg-aned-orange-dark transition-colors shadow-sm"
         >
           <Plus size={18} />
           <span>Nuevo Curso</span>
@@ -145,7 +145,7 @@ export default function CursosClient({ cursos }: { cursos: Curso[] }) {
                       <div className="flex justify-end gap-2">
                         <button
                           onClick={() => openEditModal(curso)}
-                          className="w-8 h-8 rounded-lg flex items-center justify-center text-slate-400 hover:text-teal-600 hover:bg-teal-50 transition-colors"
+                          className="w-8 h-8 rounded-lg flex items-center justify-center text-slate-400 hover:text-aned-orange hover:bg-aned-cream transition-colors"
                           title="Editar"
                         >
                           <Edit size={16} />

@@ -107,7 +107,7 @@ export default function AsistenciaClient({
           <button
             onClick={handleSave}
             disabled={isSaving}
-            className="flex items-center gap-2 bg-teal-600 text-white px-4 py-2.5 rounded-xl font-medium hover:bg-teal-700 transition-colors shadow-sm disabled:opacity-70"
+            className="flex items-center gap-2 bg-aned-orange text-white px-4 py-2.5 rounded-xl font-medium hover:bg-aned-orange-dark transition-colors shadow-sm disabled:opacity-70"
           >
             {isSaving ? <Loader2 size={18} className="animate-spin" /> : <Save size={18} />}
             <span>Guardar Lista</span>

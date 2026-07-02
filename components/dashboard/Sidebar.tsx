@@ -83,7 +83,7 @@ export default function Sidebar({ usuario }: SidebarProps) {
               onClick={() => setMobileOpen(false)}
               className={`flex items-center gap-3 px-3 py-2.5 rounded-xl transition-all duration-150 group relative ${
                 active
-                  ? "bg-teal-500/20 text-teal-300"
+                  ? "bg-aned-orange/20 text-aned-orange"
                   : "text-slate-400 hover:bg-white/5 hover:text-white"
               }`}
               title={collapsed ? item.label : undefined}
@@ -93,7 +93,7 @@ export default function Sidebar({ usuario }: SidebarProps) {
               )}
               <Icon
                 size={18}
-                className={`shrink-0 ${active ? "text-teal-400" : "text-slate-500 group-hover:text-slate-300"}`}
+                className={`shrink-0 ${active ? "text-aned-orange" : "text-slate-500 group-hover:text-slate-300"}`}
               />
               {!collapsed && (
                 <span className="text-sm font-medium truncate">{item.label}</span>

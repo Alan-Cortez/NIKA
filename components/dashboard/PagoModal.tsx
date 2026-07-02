@@ -226,7 +226,7 @@ export default function PagoModal({ pago, alumnos, isOpen, onClose }: PagoModalP
             type="submit"
             form="pago-form"
             disabled={loading}
-            className="px-6 py-2 rounded-xl bg-teal-600 text-white font-medium hover:bg-teal-700 transition-colors disabled:opacity-70 flex items-center gap-2 shadow-sm"
+            className="px-6 py-2 rounded-xl bg-aned-orange text-white font-medium hover:bg-aned-orange-dark transition-colors disabled:opacity-70 flex items-center gap-2 shadow-sm"
           >
             {loading && <Loader2 size={16} className="animate-spin" />}
             {pago ? "Guardar Cambios" : "Registrar Pago"}

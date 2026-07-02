@@ -11,22 +11,22 @@ interface StatsCardProps {
 
 const colorMap = {
   teal: {
-    bg: "bg-teal-50",
-    icon: "bg-teal-500",
-    text: "text-teal-600",
-    trend: "text-teal-600",
+    bg: "bg-aned-cream",
+    icon: "bg-aned-teal",
+    text: "text-aned-teal-dark",
+    trend: "text-aned-teal-dark",
   },
   orange: {
     bg: "bg-orange-50",
-    icon: "bg-orange-500",
-    text: "text-orange-600",
-    trend: "text-orange-600",
+    icon: "bg-aned-orange",
+    text: "text-aned-orange-dark",
+    trend: "text-aned-orange-dark",
   },
   blue: {
     bg: "bg-blue-50",
-    icon: "bg-blue-500",
-    text: "text-blue-600",
-    trend: "text-blue-600",
+    icon: "bg-aned-blue",
+    text: "text-aned-blue-dark",
+    trend: "text-aned-blue-dark",
   },
   purple: {
     bg: "bg-purple-50",

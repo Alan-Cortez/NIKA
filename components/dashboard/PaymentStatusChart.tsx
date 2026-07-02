@@ -6,10 +6,10 @@ interface StatusCount {
 }
 
 const STATUS_CONFIG: Record<string, { label: string; color: string; bg: string }> = {
-  pagado: { label: "Pagado", color: "#0d9488", bg: "bg-teal-500" },
-  pendiente: { label: "Pendiente", color: "#f97316", bg: "bg-orange-400" },
-  parcial: { label: "Parcial", color: "#2563eb", bg: "bg-blue-500" },
-  vencido: { label: "Vencido", color: "#dc2626", bg: "bg-red-500" },
+  pagado: { label: "Pagado", color: "#0d9488", bg: "bg-aned-teal" },
+  pendiente: { label: "Pendiente", color: "#fbbf24", bg: "bg-aned-gold" },
+  parcial: { label: "Parcial", color: "#f97316", bg: "bg-aned-orange" },
+  vencido: { label: "Vencido", color: "#dc2626", bg: "bg-aned-red" },
 };
 
 export default function PaymentStatusChart({ data }: { data: StatusCount[] }) {

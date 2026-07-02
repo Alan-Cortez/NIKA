@@ -11,11 +11,10 @@ export default function LoginPage() {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-900 via-slate-800 to-teal-900 relative overflow-hidden">
-      {/* Fondo decorativo */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute -top-40 -left-40 w-96 h-96 rounded-full bg-teal-500/10 blur-3xl" />
-        <div className="absolute -bottom-40 -right-40 w-96 h-96 rounded-full bg-orange-500/10 blur-3xl" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-teal-900/20 blur-3xl" />
+        <div className="absolute -top-40 -left-40 w-96 h-96 rounded-full bg-aned-teal/10 blur-3xl" />
+        <div className="absolute -bottom-40 -right-40 w-96 h-96 rounded-full bg-aned-orange/10 blur-3xl" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-aned-teal-dark/20 blur-3xl" />
       </div>
 
       <div className="relative w-full max-w-md mx-4">
@@ -23,7 +22,7 @@ export default function LoginPage() {
         <div className="bg-white/5 backdrop-blur-2xl border border-white/10 rounded-3xl shadow-2xl p-8 md:p-10">
           {/* Logo + Título */}
           <div className="flex flex-col items-center mb-8">
-            <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-aned-teal to-teal-600 flex items-center justify-center shadow-lg mb-4">
+            <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-aned-teal to-aned-teal-dark flex items-center justify-center shadow-lg mb-4">
               <BookOpen className="text-white" size={28} strokeWidth={1.5} />
             </div>
             <h1 className="text-2xl font-bold text-white font-display">

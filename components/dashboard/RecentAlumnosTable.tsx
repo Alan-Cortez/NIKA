@@ -83,7 +83,7 @@ export default function RecentAlumnosTable({
                   <td className="px-5 py-3 text-right">
                     <Link
                       href={`/maestra/dashboard/alumnos/${alumno.id}`}
-                      className="inline-flex items-center justify-center w-8 h-8 rounded-lg text-slate-400 hover:text-teal-600 hover:bg-teal-50 transition-colors"
+                      className="inline-flex items-center justify-center w-8 h-8 rounded-lg text-slate-400 hover:text-aned-teal hover:bg-aned-cream transition-colors"
                       title="Ver detalles"
                     >
                       <ChevronRight size={18} />
