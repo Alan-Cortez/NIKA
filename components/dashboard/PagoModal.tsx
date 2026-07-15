@@ -231,6 +231,7 @@ export default function PagoModal({ pago, alumnos, isOpen, onClose, modoAbono }:
                 <input
                   type="number"
                   step="0.01"
+                  min="0"
                   name="montoAcordado"
                   defaultValue={pago?.montoAcordado ?? MONTO_SEMANAL}
                   readOnly={!!pago}
@@ -242,6 +243,7 @@ export default function PagoModal({ pago, alumnos, isOpen, onClose, modoAbono }:
                 <input
                   type="number"
                   step="0.01"
+                  min="0"
                   name="montoPagado"
                   value={montoPagado}
                   onChange={(e) => setMontoPagado(parseFloat(e.target.value) || 0)}
@@ -279,6 +281,7 @@ export default function PagoModal({ pago, alumnos, isOpen, onClose, modoAbono }:
                 name="notas"
                 defaultValue={pago?.notas || ""}
                 rows={2}
+                maxLength={500}
                 placeholder="Ej: Pagó la semana del 20 al 25 de julio..."
                 className="w-full px-3 py-2 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500/20 focus:border-teal-500 resize-none"
               />

@@ -17,6 +17,11 @@ export async function registrarPago(formData: FormData) {
   const metodoPago = formData.get("metodoPago") as string || "efectivo";
   const notas = formData.get("notas") as string;
 
+  if (isNaN(mes) || mes < 1 || mes > 12) return { error: "El mes es inválido." };
+  if (isNaN(anio) || anio < 2020) return { error: "El año es inválido." };
+  if (isNaN(montoAcordado) || montoAcordado < 0) return { error: "El monto acordado no puede ser negativo." };
+  if (montoPagado < 0) return { error: "El monto pagado no puede ser negativo." };
+
   let estado = "pendiente";
   if (montoPagado >= montoAcordado) {
     estado = "pagado";
@@ -72,6 +77,8 @@ export async function actualizarPago(id: string, formData: FormData) {
   const fechaPagoStr = formData.get("fechaPago") as string;
   const metodoPago = formData.get("metodoPago") as string;
   const notas = formData.get("notas") as string;
+
+  if (montoPagado < 0) return { error: "El monto pagado no puede ser negativo." };
 
   try {
     const pagoExistente = await prisma.pago.findUnique({ where: { id } });

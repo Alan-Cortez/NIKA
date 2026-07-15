@@ -11,6 +11,7 @@ export async function crearObservacion(alumnoId: string, formData: FormData) {
   const tipo = (formData.get("tipo") as string) || "general";
 
   if (!texto) return { error: "El texto de la nota no puede estar vacío." };
+  if (texto.length > 1000) return { error: "El texto es demasiado largo (máx 1000 caracteres)." };
 
   try {
     await prisma.observacion.create({

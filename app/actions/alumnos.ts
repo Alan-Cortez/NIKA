@@ -18,6 +18,19 @@ export async function crearAlumno(formData: FormData) {
   const emailTutor = formData.get("emailTutor") as string;
   const notasInternas = formData.get("notasInternas") as string;
 
+  if (!nombreAlumno || nombreAlumno.length < 3) {
+    return { error: "El nombre debe tener al menos 3 caracteres." };
+  }
+  if (!nombreTutor || nombreTutor.length < 3) {
+    return { error: "El nombre del tutor debe tener al menos 3 caracteres." };
+  }
+  if (telefonoTutor && telefonoTutor.length < 7) {
+    return { error: "El teléfono debe tener al menos 7 caracteres." };
+  }
+  if (emailTutor && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailTutor)) {
+    return { error: "El correo electrónico no es válido." };
+  }
+
   try {
     const alumno = await prisma.alumno.create({
       data: {
@@ -28,7 +41,7 @@ export async function crearAlumno(formData: FormData) {
         estado,
         nombreTutor,
         telefonoTutor,
-        emailTutor,
+        emailTutor: emailTutor.toLowerCase(),
         notasInternas,
         origen: "dashboard",
         consentimientoPadres: true, // Asumido desde dashboard
@@ -65,6 +78,19 @@ export async function editarAlumno(id: string, formData: FormData) {
   const emailTutor = formData.get("emailTutor") as string;
   const notasInternas = formData.get("notasInternas") as string;
 
+  if (!nombreAlumno || nombreAlumno.length < 3) {
+    return { error: "El nombre debe tener al menos 3 caracteres." };
+  }
+  if (!nombreTutor || nombreTutor.length < 3) {
+    return { error: "El nombre del tutor debe tener al menos 3 caracteres." };
+  }
+  if (telefonoTutor && telefonoTutor.length < 7) {
+    return { error: "El teléfono debe tener al menos 7 caracteres." };
+  }
+  if (emailTutor && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailTutor)) {
+    return { error: "El correo electrónico no es válido." };
+  }
+
   try {
     await prisma.alumno.update({
       where: { id },
@@ -76,7 +102,7 @@ export async function editarAlumno(id: string, formData: FormData) {
         estado,
         nombreTutor,
         telefonoTutor,
-        emailTutor,
+        emailTutor: emailTutor.toLowerCase(),
         notasInternas,
       },
     });

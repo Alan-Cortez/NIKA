@@ -68,6 +68,7 @@ export default function NotasAlumno({
           onChange={(e) => setTexto(e.target.value)}
           placeholder="Escribe una nota sobre el avance de hoy..."
           rows={3}
+          maxLength={1000}
           className="w-full px-4 py-3 border border-slate-200 rounded-xl text-sm resize-none focus:outline-none focus:ring-2 focus:ring-aned-teal/30 focus:border-aned-teal transition-all"
         />
         <div className="flex flex-wrap items-center gap-3">

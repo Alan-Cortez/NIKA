@@ -105,6 +105,8 @@ export default function AlumnoModal({ alumno, cursos, isOpen, onClose }: AlumnoM
                     name="nombreAlumno"
                     defaultValue={alumno?.nombreAlumno}
                     required
+                    minLength={3}
+                    maxLength={100}
                     className="w-full px-3 py-2 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500/20 focus:border-teal-500"
                   />
                 </div>
@@ -178,6 +180,8 @@ export default function AlumnoModal({ alumno, cursos, isOpen, onClose }: AlumnoM
                       name="nombreTutor"
                       defaultValue={alumno?.nombreTutor}
                       required
+                      minLength={3}
+                      maxLength={100}
                       className="w-full px-3 py-2 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500/20 focus:border-teal-500"
                     />
                   </div>
@@ -187,6 +191,10 @@ export default function AlumnoModal({ alumno, cursos, isOpen, onClose }: AlumnoM
                       name="telefonoTutor"
                       defaultValue={alumno?.telefonoTutor}
                       required
+                      minLength={7}
+                      maxLength={20}
+                      pattern="^[0-9+\(\)\s\-]+$"
+                      title="Ingresa un número de teléfono válido"
                       className="w-full px-3 py-2 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500/20 focus:border-teal-500"
                     />
                   </div>
@@ -211,6 +219,7 @@ export default function AlumnoModal({ alumno, cursos, isOpen, onClose }: AlumnoM
                     name="notasInternas"
                     defaultValue={alumno?.notasInternas || ""}
                     rows={3}
+                    maxLength={1000}
                     placeholder="Notas privadas sobre el alumno, necesidades especiales, etc."
                     className="w-full px-3 py-2 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500/20 focus:border-teal-500 resize-none"
                   ></textarea>
