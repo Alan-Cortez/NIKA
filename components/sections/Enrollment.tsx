@@ -16,7 +16,7 @@ export default function Enrollment() {
           </h2>
           <p className="mt-4 text-blue-100 leading-relaxed">
             Completa el formulario con tus datos y el consentimiento de los padres.
-            Este es el único registro conectado a nuestra base de datos. Maestra Aned
+            Este es el único registro conectado a nuestra base de datos. Miss Aned
             te contactará para confirmar horarios y detalles del programa.
           </p>
 

@@ -13,7 +13,7 @@ export default function Hero() {
             <span className="text-aned-orange">clases particulares</span> para avanzar con seguridad
           </h1>
           <p className="max-w-lg text-lg text-slate-600">
-            Maestra Aned acompaña a cada alumno con paciencia, dedicación y estrategias
+            Miss Aned acompaña a cada alumno con paciencia, dedicación y estrategias
             adaptadas. Un apoyo cercano para reforzar aprendizaje, tareas y confianza
             en niveles de preescolar y primaria.
           </p>

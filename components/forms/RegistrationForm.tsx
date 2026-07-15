@@ -211,7 +211,7 @@ export default function RegistrationForm() {
           />
           <span className="text-sm leading-relaxed text-white/90">
             Como padre, madre o tutor legal, autorizo la inscripción de mi hijo(a)
-            en el programa educativo de Maestra Aned. Confirmo que la información
+            en el programa educativo de Miss Aned. Confirmo que la información
             proporcionada es verídica y doy mi consentimiento para el tratamiento
             de estos datos con fines educativos y de contacto.
           </span>

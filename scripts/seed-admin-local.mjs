@@ -16,7 +16,7 @@ async function main() {
 
   const email = requireEnv("ADMIN_EMAIL");
   const password = requireEnv("ADMIN_PASSWORD");
-  const nombre = process.env.ADMIN_NOMBRE ?? "Maestra Aned";
+  const nombre = process.env.ADMIN_NOMBRE ?? "Miss Aned";
 
   // Connect to local SQLite DB instead of Turso
   const db = createClient({

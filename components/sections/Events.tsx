@@ -11,7 +11,7 @@ const events = [
     day: "26",
     month: "Jul",
     title: "Open house — conoce nuestras aulas",
-    description: "Visita guiada, presentación de programas y tiempo de preguntas con Maestra Aned.",
+    description: "Visita guiada, presentación de programas y tiempo de preguntas con Miss Aned.",
   },
 ];
 

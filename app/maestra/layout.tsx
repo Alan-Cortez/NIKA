@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Acceso Administrativo — NIKA",
-  description: "Panel de administración exclusivo para la maestra Aned.",
+  description: "Panel de administración exclusivo para la Miss Aned.",
   robots: "noindex, nofollow",
 };
 

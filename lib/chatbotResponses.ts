@@ -4,7 +4,7 @@ export type ChatbotResponse = {
 };
 
 export const CHATBOT_GREETING =
-  "¡Hola! Soy el asistente de Maestra Aned. Con gusto te ayudo con información sobre clases particulares, programas, edades, secundaria, inscripción, costos, horarios y medios de contacto.";
+  "¡Hola! Soy el asistente de Miss Aned. Con gusto te ayudo con información sobre clases particulares, programas, edades, secundaria, inscripción, costos, horarios y medios de contacto.";
 
 export const CHATBOT_DEFAULT =
   "Gracias por escribir. Puedo ayudarte con clases particulares, programas, edades, secundaria, costos aproximados, inscripción y contacto. Si tu duda es más específica, también puedes comunicarte por WhatsApp al +52 (878) 790-0869 o dejar tus datos en el formulario de inscripción.";
@@ -28,7 +28,7 @@ export const CHATBOT_RESPONSES: ChatbotResponse[] = [
   {
     keywords: ["horario", "horarios", "hora", "cuando", "cuándo", "clases", "dias", "días"],
     answer:
-      "Las clases se imparten de lunes a viernes. El horario exacto se adapta según la edad y necesidad de cada niño, así que al registrarte Maestra Aned puede orientarte con la mejor opción para tu pequeño.",
+      "Las clases se imparten de lunes a viernes. El horario exacto se adapta según la edad y necesidad de cada niño, así que al registrarte Miss Aned puede orientarte con la mejor opción para tu pequeño.",
   },
   {
     keywords: ["atencion", "atención", "atienden", "horario de atencion", "horario de atención"],
@@ -38,7 +38,7 @@ export const CHATBOT_RESPONSES: ChatbotResponse[] = [
   {
     keywords: ["inscrib", "registr", "matricul", "inscripcion", "inscripción", "anotar"],
     answer:
-      "Para inscribir a tu hijo, solo baja a la sección «Inscripción» y completa el formulario con los datos solicitados. Después, Maestra Aned podrá darte seguimiento de forma más personalizada.",
+      "Para inscribir a tu hijo, solo baja a la sección «Inscripción» y completa el formulario con los datos solicitados. Después, Miss Aned podrá darte seguimiento de forma más personalizada.",
   },
   {
     keywords: ["requisitos", "necesito", "documentos", "datos", "piden", "solicitan"],
@@ -48,12 +48,12 @@ export const CHATBOT_RESPONSES: ChatbotResponse[] = [
   {
     keywords: ["formulario", "registro", "registrar", "llenar", "completar"],
     answer:
-      "El formulario de inscripción solicita los datos del alumno y del tutor. Al enviarlo, Maestra Aned recibe el registro y luego te contacta para confirmar horarios y detalles del programa.",
+      "El formulario de inscripción solicita los datos del alumno y del tutor. Al enviarlo, Miss Aned recibe el registro y luego te contacta para confirmar horarios y detalles del programa.",
   },
   {
     keywords: ["cristian", "biblia", "fe", "valores", "dios", "jesus", "jesús", "enseñ"],
     answer:
-      "Maestra Aned acompaña a los niños con paciencia, valores, respeto y disciplina. Las clases combinan aprendizaje y actividades lúdicas en un ambiente seguro, cercano y con atención cariñosa.",
+      "Miss Aned acompaña a los niños con paciencia, valores, respeto y disciplina. Las clases combinan aprendizaje y actividades lúdicas en un ambiente seguro, cercano y con atención cariñosa.",
   },
   {
     keywords: ["metodo", "método", "metodologia", "metodología", "aprenden", "aprendizaje", "apoyo academico", "apoyo académico"],
@@ -63,12 +63,12 @@ export const CHATBOT_RESPONSES: ChatbotResponse[] = [
   {
     keywords: ["seguro", "seguridad", "ambiente", "confianza", "cuidado"],
     answer:
-      "Sí, el enfoque de Maestra Aned es ofrecer un ambiente seguro, cálido y respetuoso, donde cada niño se sienta valorado y pueda aprender con confianza.",
+      "Sí, el enfoque de Miss Aned es ofrecer un ambiente seguro, cálido y respetuoso, donde cada niño se sienta valorado y pueda aprender con confianza.",
   },
   {
     keywords: ["contact", "contacto", "telefono", "teléfono", "numero", "número", "correo", "email"],
     answer:
-      "Claro. Puedes contactar a Maestra Aned por WhatsApp o teléfono al +52 (878) 790-0869, por correo a anedvictoria@gmail.com.com y también desde Facebook como «Aned De la cruz». La ubicación mostrada es Allende, Coahuila, México.",
+      "Claro. Puedes contactar a Miss Aned por WhatsApp o teléfono al +52 (878) 790-0869, y también desde Facebook como «Aned De la cruz». La ubicación mostrada es Allende, Coahuila, México.",
   },
   {
     keywords: ["whatsapp", "wasap", "wsp", "telefono", "teléfono", "llamar"],
@@ -88,7 +88,7 @@ export const CHATBOT_RESPONSES: ChatbotResponse[] = [
   {
     keywords: ["precio", "precios", "costo", "costos", "pago", "mensualidad", "cuanto", "cuánto", "clase"],
     answer:
-      "El costo aproximado de las clases particulares ronda entre 80 y 100 pesos por día, dependiendo del tipo de acompañamiento o necesidad del alumno. Si quieres una cotización más precisa, deja tus datos y Maestra Aned podrá orientarte de forma personalizada.",
+      "El costo aproximado de las clases particulares ronda entre 80 y 100 pesos por día, dependiendo del tipo de acompañamiento o necesidad del alumno. Si quieres una cotización más precisa, deja tus datos y Miss Aned podrá orientarte de forma personalizada.",
   },
   {
     keywords: ["edad", "edades", "anos", "años", "ninos", "niños", "pequeno", "pequeño"],
@@ -128,12 +128,12 @@ export const CHATBOT_RESPONSES: ChatbotResponse[] = [
   {
     keywords: ["maestra", "aned", "quien", "quién", "docente"],
     answer:
-      "Maestra Aned es una docente comprometida con el aprendizaje infantil y especializada en apoyo académico personalizado, con un enfoque de paciencia, empatía, creatividad y seguimiento del progreso.",
+      "Miss Aned es una docente comprometida con el aprendizaje infantil y especializada en apoyo académico personalizado, con un enfoque de paciencia, empatía, creatividad y seguimiento del progreso.",
   },
   {
     keywords: ["testimonio", "opiniones", "opinan", "padres", "familias"],
     answer:
-      "En la página se comparte el testimonio de una madre de preescolar que dice que Maestra Aned ha sido una bendición para su familia y que el amor con el que enseña se nota en cada clase.",
+      "En la página se comparte el testimonio de una madre de preescolar que dice que Miss Aned ha sido una bendición para su familia y que el amor con el que enseña se nota en cada clase.",
   },
 ];
 

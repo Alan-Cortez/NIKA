@@ -1,4 +1,4 @@
-import { Clock, Mail, MapPin, Phone } from "lucide-react";
+import { Facebook, Phone } from "lucide-react";
 
 export default function Contact() {
   return (
@@ -19,17 +19,6 @@ export default function Contact() {
 
             <ul className="mt-8 space-y-5">
               <li className="flex items-start gap-4">
-                <span className="flex h-11 w-11 items-center justify-center rounded-full bg-aned-orange/10 text-aned-orange">
-                  <MapPin className="h-5 w-5" />
-                </span>
-                <div>
-                  <p className="font-bold text-slate-800">Ubicación</p>
-                  <p className="text-sm text-slate-600">
-                    Allende Coahuila, México
-                  </p>
-                </div>
-              </li>
-              <li className="flex items-start gap-4">
                 <span className="flex h-11 w-11 items-center justify-center rounded-full bg-aned-teal/10 text-aned-teal">
                   <Phone className="h-5 w-5" />
                 </span>
@@ -40,20 +29,13 @@ export default function Contact() {
               </li>
               <li className="flex items-start gap-4">
                 <span className="flex h-11 w-11 items-center justify-center rounded-full bg-aned-blue/10 text-aned-blue">
-                  <Mail className="h-5 w-5" />
+                  <Facebook className="h-5 w-5" />
                 </span>
                 <div>
-                  <p className="font-bold text-slate-800">Correo</p>
-                  <p className="text-sm text-slate-600">anedvictoria@gmail.com.com</p>
-                </div>
-              </li>
-              <li className="flex items-start gap-4">
-                <span className="flex h-11 w-11 items-center justify-center rounded-full bg-aned-purple/10 text-aned-purple">
-                  <Clock className="h-5 w-5" />
-                </span>
-                <div>
-                  <p className="font-bold text-slate-800">Horario de atención</p>
-                  <p className="text-sm text-slate-600">Lunes a viernes, 8:00 – 18:00</p>
+                  <p className="font-bold text-slate-800">Facebook</p>
+                  <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" className="text-sm text-slate-600 hover:text-aned-blue transition-colors">
+                    Aned De la cruz
+                  </a>
                 </div>
               </li>
             </ul>

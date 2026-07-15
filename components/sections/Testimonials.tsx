@@ -16,7 +16,7 @@ export default function Testimonials() {
             ))}
           </div>
           <blockquote className="mt-6 text-lg italic leading-relaxed text-slate-700">
-            &ldquo;Maestra Aned ha sido una bendición para nuestra familia. Mi hija
+            &ldquo;Miss Aned ha sido una bendición para nuestra familia. Mi hija
             no solo aprendió lectura y números, sino que creció en fe y confianza.
             El amor con el que enseña se nota en cada clase.&rdquo;
           </blockquote>

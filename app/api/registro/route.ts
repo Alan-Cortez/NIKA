@@ -75,7 +75,7 @@ export async function POST(request: Request) {
 
     return NextResponse.json(
       {
-        message: "¡Registro exitoso! Maestra Aned se pondrá en contacto contigo pronto.",
+        message: "¡Registro exitoso! Miss Aned se pondrá en contacto contigo pronto.",
         id: alumno.id,
       },
       { status: 201 },
