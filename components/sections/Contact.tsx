@@ -1,4 +1,4 @@
-import { Facebook, Phone } from "lucide-react";
+import { Share2, Phone } from "lucide-react";
 
 export default function Contact() {
   return (
@@ -29,7 +29,7 @@ export default function Contact() {
               </li>
               <li className="flex items-start gap-4">
                 <span className="flex h-11 w-11 items-center justify-center rounded-full bg-aned-blue/10 text-aned-blue">
-                  <Facebook className="h-5 w-5" />
+                  <Share2 className="h-5 w-5" />
                 </span>
                 <div>
                   <p className="font-bold text-slate-800">Facebook</p>
