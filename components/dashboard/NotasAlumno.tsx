@@ -14,7 +14,7 @@ interface Observacion {
 const TIPO_CONFIG: Record<string, { label: string; icon: typeof Star; color: string; bg: string }> = {
   general:     { label: "General",    icon: MessageSquare, color: "text-slate-500",    bg: "bg-slate-100" },
   academico:   { label: "Académico",  icon: BookOpen,      color: "text-aned-blue",    bg: "bg-aned-blue/10" },
-  logro:       { label: "Logro ⭐",   icon: Star,          color: "text-aned-gold",    bg: "bg-yellow-50" },
+  logro:       { label: "Logro",    icon: Star,          color: "text-aned-gold",    bg: "bg-yellow-50" },
   conductual:  { label: "Conductual", icon: TrendingUp,    color: "text-aned-teal",    bg: "bg-aned-teal/10" },
 };
 
@@ -57,7 +57,7 @@ export default function NotasAlumno({
     <div className="bg-white rounded-3xl border border-slate-100 shadow-sm p-6 space-y-5">
       {/* Header */}
       <div>
-        <h3 className="font-bold text-slate-800 text-lg font-display">📓 Bitácora de Notas</h3>
+        <h3 className="font-bold text-slate-800 text-lg font-display">Bitácora de Notas</h3>
         <p className="text-xs text-slate-400 mt-0.5">Avances y observaciones diarias del alumno</p>
       </div>
 

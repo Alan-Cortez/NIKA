@@ -81,13 +81,13 @@ export default async function AlumnoPrintPage({
             onClick={() => window.print()}
             style={{ padding: "10px 20px", background: "#0fb8a9", color: "white", border: "none", borderRadius: "10px", fontWeight: 700, cursor: "pointer", fontSize: "14px" }}
           >
-            🖨️ Imprimir / Guardar PDF
+            Imprimir / Guardar PDF
           </button>
           <button
             onClick={() => window.history.back()}
             style={{ padding: "10px 20px", background: "#f1f5f9", color: "#475569", border: "none", borderRadius: "10px", fontWeight: 700, cursor: "pointer", fontSize: "14px" }}
           >
-            ← Regresar
+            Regresar
           </button>
         </div>
 

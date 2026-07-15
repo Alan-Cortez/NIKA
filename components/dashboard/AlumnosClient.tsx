@@ -179,7 +179,7 @@ export default function AlumnosClient({ alumnos, cursos }: { alumnos: Alumno[]; 
                           <p className="font-semibold text-slate-800">{alumno.nombreAlumno}</p>
                           {alumno.origen === "landing" && alumno.estado === "pendiente" && (
                             <span className="text-[10px] font-bold text-aned-orange bg-aned-orange/10 px-1.5 py-0.5 rounded-full">
-                              🆕 Nuevo
+                              Nuevo
                             </span>
                           )}
                         </div>

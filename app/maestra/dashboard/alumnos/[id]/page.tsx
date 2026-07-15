@@ -76,8 +76,8 @@ export default async function AlumnoDetallePage({
                 {alumno.estado}
               </span>
               {alumno.origen === "landing" && alumno.estado === "pendiente" && (
-                <span className="px-2.5 py-0.5 rounded-full text-xs font-bold bg-aned-orange/10 text-aned-orange border border-aned-orange/20 animate-pulse">
-                  🆕 Nuevo registro
+                <span className="px-2.5 py-0.5 rounded-full text-xs font-bold bg-aned-orange/10 text-aned-orange border border-aned-orange/20">
+                  Nuevo registro
                 </span>
               )}
             </div>
@@ -141,7 +141,7 @@ export default async function AlumnoDetallePage({
           {/* Pagos Recientes */}
           <div className="p-6 md:p-8 space-y-4">
             <div className="flex items-center justify-between">
-              <h3 className="font-semibold text-slate-700">💳 Pagos Semanales</h3>
+              <h3 className="font-semibold text-slate-700">Pagos Semanales</h3>
               <Link href={`/maestra/dashboard/pagos?alumno=${alumno.id}`} className="text-xs text-aned-teal hover:underline">
                 Ver todos
               </Link>

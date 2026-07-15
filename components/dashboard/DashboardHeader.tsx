@@ -33,7 +33,7 @@ export default function DashboardHeader({ usuario }: DashboardHeaderProps) {
       {/* Saludo */}
       <div className="min-w-0">
         <p className="text-slate-800 font-bold text-sm md:text-base truncate font-display">
-          {getGreeting()}, {firstName}! 🌟
+          {getGreeting()}, {firstName}!
         </p>
         <p className="text-slate-400 text-xs hidden md:block capitalize">{today}</p>
       </div>
