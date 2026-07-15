@@ -4,18 +4,17 @@ export type ChatbotResponse = {
 };
 
 export const CHATBOT_GREETING =
-  "¡Hola! Soy el asistente de Miss Aned. Con gusto te ayudo con información sobre clases particulares, programas, edades, secundaria, inscripción, costos, horarios y medios de contacto.";
+  "¡Hola! Soy el asistente de Miss Aned. Con gusto te ayudo con información sobre clases de preescolar, primaria, inscripción, costos, horarios y medios de contacto del próximo curso.";
 
 export const CHATBOT_DEFAULT =
-  "Gracias por escribir. Puedo ayudarte con clases particulares, programas, edades, secundaria, costos aproximados, inscripción y contacto. Si tu duda es más específica, también puedes comunicarte por WhatsApp al +52 (878) 790-0869 o dejar tus datos en el formulario de inscripción.";
+  "Gracias por escribir. Puedo ayudarte con información sobre nuestro curso de preescolar y primaria, edades, costos, inscripción y contacto. Si tu duda es más específica, también puedes comunicarte por WhatsApp al +52 (878) 790-0869 o dejar tus datos en el formulario de inscripción.";
 
 export const CHATBOT_QUICK_REPLIES = [
-  "¿Horarios?",
+  "¿Fechas y horarios?",
   "¿Contacto?",
   "¿WhatsApp?",
   "¿Cómo inscribir?",
   "¿Costos?",
-  "¿Edades?",
   "¿Qué enseñan?",
 ];
 
@@ -23,17 +22,17 @@ export const CHATBOT_RESPONSES: ChatbotResponse[] = [
   {
     keywords: ["hola", "buenos", "buenas", "saludos", "hey"],
     answer:
-      "¡Hola! Qué gusto saludarte. Si estás buscando clases particulares y apoyo escolar cercano para tu hijo, puedo contarte sobre horarios, edades, secundaria, inscripción y costos.",
+      "¡Hola! Qué gusto saludarte. Si estás buscando clases de preescolar o primaria para tu hijo, puedo contarte sobre fechas, horarios, inscripción y costos.",
   },
   {
-    keywords: ["horario", "horarios", "hora", "cuando", "cuándo", "clases", "dias", "días"],
+    keywords: ["horario", "horarios", "hora", "cuando", "cuándo", "clases", "dias", "días", "fecha", "fechas"],
     answer:
-      "Las clases se imparten de lunes a viernes. El horario exacto se adapta según la edad y necesidad de cada niño, así que al registrarte Miss Aned puede orientarte con la mejor opción para tu pequeño.",
+      "Las clases serán del 20 de julio al 7 de agosto, únicamente de lunes a viernes en un horario aproximado de 1:00 PM a 3:00 PM.",
   },
   {
     keywords: ["atencion", "atención", "atienden", "horario de atencion", "horario de atención"],
     answer:
-      "El horario de atención es de lunes a viernes, de 8:00 a 18:00. Si deseas información directa, también puedes escribir por WhatsApp al +52 (878) 790-0869.",
+      "Para atención y dudas, puedes escribir por WhatsApp al +52 (878) 790-0869 en cualquier momento. Recuerda que el curso será de lunes a viernes, de 1:00 PM a 3:00 PM.",
   },
   {
     keywords: ["inscrib", "registr", "matricul", "inscripcion", "inscripción", "anotar"],
@@ -43,22 +42,22 @@ export const CHATBOT_RESPONSES: ChatbotResponse[] = [
   {
     keywords: ["requisitos", "necesito", "documentos", "datos", "piden", "solicitan"],
     answer:
-      "Para el registro te pedirán: nombre del alumno, fecha de nacimiento, programa o grado, nombre del padre, madre o tutor, teléfono, correo, dirección opcional, consentimiento y nombre de quien autoriza.",
+      "Para el registro te pedirán: nombre del alumno, fecha de nacimiento, programa o grado, nombre del padre, madre o tutor, teléfono, consentimiento y nombre de quien autoriza.",
   },
   {
     keywords: ["formulario", "registro", "registrar", "llenar", "completar"],
     answer:
-      "El formulario de inscripción solicita los datos del alumno y del tutor. Al enviarlo, Miss Aned recibe el registro y luego te contacta para confirmar horarios y detalles del programa.",
+      "El formulario de inscripción solicita los datos del alumno y del tutor. Al enviarlo, Miss Aned recibe el registro y luego te contacta para confirmar tu lugar en el curso.",
   },
   {
     keywords: ["cristian", "biblia", "fe", "valores", "dios", "jesus", "jesús", "enseñ"],
     answer:
-      "Miss Aned acompaña a los niños con paciencia, valores, respeto y disciplina. Las clases combinan aprendizaje y actividades lúdicas en un ambiente seguro, cercano y con atención cariñosa.",
+      "Miss Aned acompaña a los niños con paciencia, valores, respeto y disciplina. Las clases combinan aprendizaje y actividades en un ambiente seguro, cercano y con atención cariñosa.",
   },
   {
     keywords: ["metodo", "método", "metodologia", "metodología", "aprenden", "aprendizaje", "apoyo academico", "apoyo académico"],
     answer:
-      "El acompañamiento es personalizado. Se trabaja con estrategias didácticas adaptadas a cada edad y necesidad, especialmente para fortalecer habilidades y apoyar a niños con rezago escolar.",
+      "El acompañamiento es enfocado en preescolar y primaria, con estrategias adaptadas para fortalecer habilidades, lectura, números y comprensión escolar.",
   },
   {
     keywords: ["seguro", "seguridad", "ambiente", "confianza", "cuidado"],
@@ -66,75 +65,55 @@ export const CHATBOT_RESPONSES: ChatbotResponse[] = [
       "Sí, el enfoque de Miss Aned es ofrecer un ambiente seguro, cálido y respetuoso, donde cada niño se sienta valorado y pueda aprender con confianza.",
   },
   {
-    keywords: ["contact", "contacto", "telefono", "teléfono", "numero", "número", "correo", "email"],
+    keywords: ["contact", "contacto", "telefono", "teléfono", "numero", "número"],
     answer:
-      "Claro. Puedes contactar a Miss Aned por WhatsApp o teléfono al +52 (878) 790-0869, y también desde Facebook como «Aned De la cruz». La ubicación mostrada es Allende, Coahuila, México.",
+      "Claro. Puedes contactar a Miss Aned por WhatsApp o teléfono al +52 (878) 790-0869, y también mediante la página de Facebook «Aned De la cruz».",
   },
   {
-    keywords: ["whatsapp", "wasap", "wsp", "telefono", "teléfono", "llamar"],
+    keywords: ["whatsapp", "wasap", "wsp", "llamar"],
     answer:
       "Sí, puedes escribir o llamar al +52 (878) 790-0869. Ese es el número de contacto que aparece en la página para atención directa.",
   },
   {
     keywords: ["facebook", "redes", "social", "sociales", "instagram"],
     answer:
-      "En la página aparece Facebook como «Aned De la cruz». También se muestra el WhatsApp +52 (878) 790-0869 y el correo anedvictoria@gmail.com.com como medios directos de contacto.",
+      "Puedes encontrar a Miss Aned en Facebook como «Aned De la cruz». También está disponible vía WhatsApp en el +52 (878) 790-0869.",
   },
   {
     keywords: ["ubicacion", "ubicación", "direccion", "dirección", "donde", "dónde", "mapa"],
     answer:
-      "La ubicación mostrada es Allende, Coahuila, México. En la sección de contacto también aparece un mapa para ubicar más fácilmente el lugar.",
+      "Las clases se imparten en Allende, Coahuila, México. En la sección de contacto aparece un mapa para que ubiques más fácilmente el lugar.",
   },
   {
     keywords: ["precio", "precios", "costo", "costos", "pago", "mensualidad", "cuanto", "cuánto", "clase"],
     answer:
-      "El costo aproximado de las clases particulares ronda entre 80 y 100 pesos por día, dependiendo del tipo de acompañamiento o necesidad del alumno. Si quieres una cotización más precisa, deja tus datos y Miss Aned podrá orientarte de forma personalizada.",
+      "El costo es de $500 semanales por alumno. Si deseas registrarte, por favor usa el formulario en la sección de inscripción.",
   },
   {
-    keywords: ["edad", "edades", "anos", "años", "ninos", "niños", "pequeno", "pequeño"],
+    keywords: ["edad", "edades", "anos", "años", "ninos", "niños", "pequeno", "pequeño", "grado", "nivel", "programa", "programas"],
     answer:
-      "Hay opciones según la edad del alumno: Inicial de 2 a 3 años, Preescolar de 3 a 5 años, Primaria de 6 a 11 años, Secundaria de 12 a 15 años y apoyo personalizado para distintas necesidades.",
-  },
-  {
-    keywords: ["grado", "nivel", "programa", "programas"],
-    answer:
-      "Los programas disponibles son: Inicial, Preescolar, Primaria, Secundaria y Apoyo personalizado. Cada uno se adapta a la edad y necesidad del alumno para acompañarlo de forma cercana.",
-  },
-  {
-    keywords: ["inicial", "estimulacion", "estimulación", "temprana"],
-    answer:
-      "El programa Inicial está pensado para niños de 2 a 3 años. Se trabaja con estimulación temprana, juegos, cantos y actividades formativas.",
+      "El curso está enfocado únicamente en dos programas: Preescolar (3 a 5 años) y Primaria (6 a 11 años).",
   },
   {
     keywords: ["preescolar", "lectoescritura", "numeros", "números", "3 a 5", "3-5"],
     answer:
-      "Preescolar está dirigido a niños de 3 a 5 años. Incluye lectoescritura, números y habilidades sociales en un ambiente alegre y cercano.",
+      "El nivel Preescolar está dirigido a niños de 3 a 5 años. Incluye lectoescritura, números y habilidades sociales en un ambiente alegre y cercano.",
   },
   {
     keywords: ["primaria", "refuerzo", "6 a 11", "6-11"],
     answer:
-      "Primaria está pensada para alumnos de 6 a 11 años. Se enfoca en reforzar lectura, tareas, comprensión y acompañamiento escolar.",
+      "El nivel Primaria está pensado para alumnos de 6 a 11 años. Se enfoca en reforzar lectura, tareas y comprensión escolar.",
   },
   {
-    keywords: ["secundaria", "12 a 15", "12-15", "adolescente", "adolescentes"],
+    keywords: ["maestra", "aned", "quien", "quién", "docente", "miss"],
     answer:
-      "Sí, también hay apoyo en Secundaria para alumnos de 12 a 15 años. Se trabaja refuerzo de materias, hábitos de estudio y acompañamiento para que avancen con más seguridad.",
-  },
-  {
-    keywords: ["personalizado", "personalizada", "rezago", "apoyo"],
-    answer:
-      "El apoyo personalizado se adapta al ritmo y necesidad de cada niño. Es una buena opción cuando se busca reforzamiento académico más cercano o atención especial en algún área.",
-  },
-  {
-    keywords: ["maestra", "aned", "quien", "quién", "docente"],
-    answer:
-      "Miss Aned es una docente comprometida con el aprendizaje infantil y especializada en apoyo académico personalizado, con un enfoque de paciencia, empatía, creatividad y seguimiento del progreso.",
+      "Miss Aned es una docente comprometida con el aprendizaje infantil, con un enfoque de paciencia, empatía, creatividad y seguimiento del progreso de cada niño.",
   },
   {
     keywords: ["testimonio", "opiniones", "opinan", "padres", "familias"],
     answer:
-      "En la página se comparte el testimonio de una madre de preescolar que dice que Miss Aned ha sido una bendición para su familia y que el amor con el que enseña se nota en cada clase.",
-  },
+      "En la página se comparte el testimonio de una familia que menciona cómo Miss Aned ha sido una bendición y cómo el amor con el que enseña se nota en cada clase.",
+  }
 ];
 
 export function findChatbotAnswer(message: string): string {
