@@ -1,6 +1,7 @@
 import { prisma } from "@/lib/db";
 import { notFound } from "next/navigation";
 import Image from "next/image";
+import { verifySession } from "@/lib/dal";
 
 export const dynamic = "force-dynamic";
 
@@ -9,6 +10,9 @@ export default async function AlumnoPrintPage({
 }: {
   params: Promise<{ id: string }>;
 }) {
+  // Verificar sesión — redirige a login si no hay sesión activa
+  await verifySession();
+
   const { id } = await params;
 
   const alumno = await prisma.alumno.findUnique({
