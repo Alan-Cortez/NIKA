@@ -63,9 +63,6 @@ export default function Footer() {
             <p className="text-sm text-slate-600">
               <strong>WhatsApp:</strong> +52 (878) 790-0869
             </p>
-            <p className="text-sm text-slate-600">
-              <strong>Correo:</strong> anedvictoria@gmail.com.com
-            </p>
           </div>
         </div>
       </div>
@@ -76,9 +73,6 @@ export default function Footer() {
           <div className="flex items-center gap-4">
             <span className="flex items-center gap-1">
               <Phone className="h-4 w-4 text-aned-teal" /> +52 (878) 790-0869
-            </span>
-            <span className="flex items-center gap-1">
-              <Mail className="h-4 w-4 text-aned-teal" /> anedvictoria@gmail.com
             </span>
             {/* Link discreto para la maestra — invisible hasta hacer hover */}
             <a

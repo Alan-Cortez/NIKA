@@ -53,7 +53,7 @@ export default function Chatbot() {
         <div className="chat-pop fixed bottom-24 right-4 z-50 flex h-[420px] w-[min(360px,calc(100vw-2rem))] flex-col overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-2xl sm:right-6">
           <div className="flex items-center justify-between bg-aned-teal px-4 py-3 text-white">
             <div>
-              <p className="section-title font-bold">Asistente Aned</p>
+              <p className="section-title font-bold">Miss Aned</p>
               <p className="text-xs text-teal-100">Orientación cercana para mamás y papás</p>
             </div>
             <button
