@@ -5,11 +5,12 @@ interface StatusCount {
   _count: { id: number };
 }
 
+// Colores alineados con la paleta de la landing page
 const STATUS_CONFIG: Record<string, { label: string; color: string; bg: string }> = {
-  pagado: { label: "Pagado", color: "#0d9488", bg: "bg-aned-teal" },
-  pendiente: { label: "Pendiente", color: "#fbbf24", bg: "bg-aned-gold" },
-  parcial: { label: "Parcial", color: "#f97316", bg: "bg-aned-orange" },
-  vencido: { label: "Vencido", color: "#dc2626", bg: "bg-aned-red" },
+  pagado:   { label: "Pagado",   color: "#0fb8a9", bg: "bg-aned-teal" },   // teal pastel
+  pendiente:{ label: "Pendiente",color: "#F5A623", bg: "bg-aned-gold" },   // gold/naranja suave
+  parcial:  { label: "Parcial",  color: "#FF8C69", bg: "bg-aned-orange" }, // naranja pastel
+  vencido:  { label: "Vencido",  color: "#e57373", bg: "bg-red-300" },     // rojo suave
 };
 
 export default function PaymentStatusChart({ data }: { data: StatusCount[] }) {
@@ -17,13 +18,12 @@ export default function PaymentStatusChart({ data }: { data: StatusCount[] }) {
 
   if (!data.length || total === 0) {
     return (
-      <div className="bg-white rounded-2xl border border-slate-200 p-5 shadow-sm h-full flex items-center justify-center min-h-48">
+      <div className="bg-white rounded-2xl border border-slate-100 p-5 shadow-sm h-full flex items-center justify-center min-h-48">
         <p className="text-slate-400 text-sm">Sin pagos registrados</p>
       </div>
     );
   }
 
-  // Build donut segments
   const segments: { estado: string; count: number; pct: number; offset: number }[] = [];
   let offset = 0;
   for (const d of data) {
@@ -36,8 +36,8 @@ export default function PaymentStatusChart({ data }: { data: StatusCount[] }) {
   const circumference = 2 * Math.PI * radius;
 
   return (
-    <div className="bg-white rounded-2xl border border-slate-200 p-5 shadow-sm">
-      <h3 className="font-semibold text-slate-800 mb-1">Estado de Pagos</h3>
+    <div className="bg-white rounded-2xl border border-slate-100 p-5 shadow-sm">
+      <h3 className="font-semibold text-slate-700 mb-1">Estado de Pagos</h3>
       <p className="text-xs text-slate-400 mb-4">{total} pagos en total</p>
 
       {/* Donut */}
@@ -83,7 +83,7 @@ export default function PaymentStatusChart({ data }: { data: StatusCount[] }) {
                   <span className={`w-2.5 h-2.5 rounded-full ${cfg.bg}`} />
                   <span className="text-slate-600 text-xs">{cfg.label}</span>
                 </div>
-                <span className="text-slate-800 font-semibold text-xs">
+                <span className="text-slate-700 font-semibold text-xs">
                   {seg.count} ({seg.pct.toFixed(0)}%)
                 </span>
               </div>

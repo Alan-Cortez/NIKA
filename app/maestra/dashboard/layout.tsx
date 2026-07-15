@@ -17,7 +17,7 @@ export default async function DashboardLayout({
   const { usuario } = await verifySession();
 
   return (
-    <div className="min-h-screen bg-slate-50 flex">
+    <div className="min-h-screen bg-slate-50/60 flex">
       {/* Sidebar lateral */}
       <Sidebar usuario={usuario} />
 
