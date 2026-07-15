@@ -28,7 +28,7 @@ export default function Programs() {
             Clases particulares según la etapa y necesidad de cada alumno
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-orange-100">
-            Programas enfocados en preescolar y primaria, con un costo accesible de <strong>$500 semanales</strong>. El apoyo se adapta al ritmo, edad y metas de aprendizaje de cada familia.
+            Programas enfocados en preescolar y primaria, con un costo accesible de <strong>$500 semanales</strong>. El curso será del <strong>20 de julio al 7 de agosto</strong>, en horario de <strong>lunes a viernes de 1:00 PM a 3:00 PM</strong>.
           </p>
         </div>
 

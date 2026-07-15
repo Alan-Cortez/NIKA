@@ -6,7 +6,7 @@ export default function Hero() {
       <div className="mx-auto grid max-w-7xl items-center gap-12 px-4 lg:grid-cols-2 lg:px-8">
         <div className="space-y-6">
           <span className="inline-block rounded-full bg-aned-teal/10 px-4 py-1.5 text-sm font-bold text-aned-teal">
-            Clases particulares con atención personalizada
+            20 de Julio al 7 de Agosto • Lunes a Viernes de 1 PM a 3 PM
           </span>
           <h1 className="section-title text-4xl font-bold leading-tight text-slate-900 sm:text-5xl lg:text-6xl">
             Apoyo escolar y{" "}
@@ -15,7 +15,7 @@ export default function Hero() {
           <p className="max-w-lg text-lg text-slate-600">
             Maestra Aned acompaña a cada alumno con paciencia, dedicación y estrategias
             adaptadas. Un apoyo cercano para reforzar aprendizaje, tareas y confianza
-            desde inicial hasta secundaria.
+            en niveles de preescolar y primaria.
           </p>
           <div className="flex flex-wrap gap-4">
             <a
