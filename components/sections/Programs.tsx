@@ -2,13 +2,6 @@ import Image from "next/image";
 
 const programs = [
   {
-    title: "Inicial",
-    age: "2 – 3 años",
-    description: "Estimulación temprana con juegos, cantos y actividades formativas.",
-    image: "/images/hero.jpg",
-    color: "bg-aned-orange",
-  },
-  {
     title: "Preescolar",
     age: "3 – 5 años",
     description: "Lectoescritura, números y habilidades sociales en un ambiente alegre.",
@@ -21,20 +14,6 @@ const programs = [
     description: "Refuerzo en lectura, tareas, comprensión y acompañamiento escolar.",
     image: "/images/reading.jpg",
     color: "bg-aned-blue",
-  },
-  {
-    title: "Secundaria",
-    age: "12 – 15 años",
-    description: "Apoyo académico para reforzar materias, hábitos de estudio y seguridad.",
-    image: "/images/classroom.jpg",
-    color: "bg-aned-red",
-  },
-  {
-    title: "Apoyo personalizado",
-    age: "Todas las edades",
-    description: "Clases particulares adaptadas al ritmo y necesidades de cada alumno.",
-    image: "/images/hero.jpg",
-    color: "bg-aned-purple",
   },
 ];
 
@@ -49,12 +28,11 @@ export default function Programs() {
             Clases particulares según la etapa y necesidad de cada alumno
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-orange-100">
-            Desde inicial hasta secundaria, el apoyo se adapta al ritmo, edad y metas
-            de aprendizaje de cada familia.
+            Programas enfocados en preescolar y primaria, con un costo accesible de <strong>$500 semanales</strong>. El apoyo se adapta al ritmo, edad y metas de aprendizaje de cada familia.
           </p>
         </div>
 
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
+        <div className="mx-auto mt-12 grid max-w-4xl gap-6 sm:grid-cols-2">
           {programs.map((program) => (
             <article
               key={program.title}
