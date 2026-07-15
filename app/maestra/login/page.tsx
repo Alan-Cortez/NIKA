@@ -44,7 +44,7 @@ export default function LoginPage() {
                 type="email"
                 autoComplete="email"
                 required
-                placeholder="lancortez9966@gmail.com"
+                placeholder="correo@ejemplo.com"
                 className="w-full px-4 py-3.5 rounded-xl bg-slate-50 border border-slate-200 text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-aned-teal/50 focus:border-aned-teal/50 transition-all font-medium"
               />
             </div>
