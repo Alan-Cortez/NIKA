@@ -2,8 +2,9 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { Plus, Search, ChevronRight, Filter } from "lucide-react";
+import { Plus, Search, Filter, Sparkles } from "lucide-react";
 import AlumnoModal from "./AlumnoModal";
+import { activarAlumno } from "@/app/actions/alumnos";
 
 interface Curso {
   id: string;
@@ -27,31 +28,86 @@ interface Alumno {
 }
 
 const STATUS_COLORS: Record<string, string> = {
-  activo: "bg-emerald-100 text-emerald-700",
-  inactivo: "bg-red-100 text-red-700",
-  pendiente: "bg-orange-100 text-orange-700",
+  activo: "bg-aned-teal/10 text-aned-teal",
+  inactivo: "bg-red-100 text-red-600",
+  pendiente: "bg-yellow-50 text-yellow-600",
 };
+
+function ActivarButton({ alumnoId }: { alumnoId: string }) {
+  const [loading, setLoading] = useState(false);
+
+  async function handleActivar() {
+    setLoading(true);
+    await activarAlumno(alumnoId);
+    setLoading(false);
+  }
+
+  return (
+    <button
+      onClick={handleActivar}
+      disabled={loading}
+      className="inline-flex items-center gap-1 px-3 py-1 rounded-lg bg-aned-teal text-white text-xs font-semibold hover:bg-aned-teal-dark disabled:opacity-60 transition-colors"
+    >
+      <Sparkles size={11} />
+      {loading ? "Activando..." : "Activar"}
+    </button>
+  );
+}
 
 export default function AlumnosClient({ alumnos, cursos }: { alumnos: Alumno[]; cursos: Curso[] }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [search, setSearch] = useState("");
   const [filterEstado, setFilterEstado] = useState("todos");
 
-  // Filtrado en el cliente
-  const filteredAlumnos = alumnos.filter(a => {
-    const matchSearch = a.nombreAlumno.toLowerCase().includes(search.toLowerCase()) || 
-                        a.nombreTutor.toLowerCase().includes(search.toLowerCase());
+  const nuevos = alumnos.filter(a => a.origen === "landing" && a.estado === "pendiente");
+
+  const filteredAlumnos = alumnos.filter((a) => {
+    const matchSearch =
+      a.nombreAlumno.toLowerCase().includes(search.toLowerCase()) ||
+      a.nombreTutor.toLowerCase().includes(search.toLowerCase());
     const matchEstado = filterEstado === "todos" || a.estado === filterEstado;
     return matchSearch && matchEstado;
   });
 
   return (
     <div className="space-y-6">
+      {/* Alumnos nuevos de la landing */}
+      {nuevos.length > 0 && (
+        <div className="bg-aned-orange/5 border border-aned-orange/20 rounded-2xl p-4">
+          <p className="text-sm font-bold text-aned-orange mb-3 flex items-center gap-2">
+            <Sparkles size={16} />
+            {nuevos.length} {nuevos.length === 1 ? "alumno nuevo" : "alumnos nuevos"} esperando aprobación
+          </p>
+          <div className="flex flex-wrap gap-3">
+            {nuevos.map((a) => (
+              <div key={a.id} className="flex items-center gap-3 bg-white rounded-xl border border-aned-orange/20 px-4 py-2.5 shadow-sm">
+                <div className="w-8 h-8 rounded-full bg-aned-orange/10 flex items-center justify-center font-bold text-aned-orange text-sm">
+                  {a.nombreAlumno.charAt(0)}
+                </div>
+                <div className="min-w-0">
+                  <p className="text-sm font-semibold text-slate-800 truncate">{a.nombreAlumno}</p>
+                  <p className="text-xs text-slate-400">{a.grado}</p>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Link
+                    href={`/maestra/dashboard/alumnos/${a.id}`}
+                    className="text-xs text-aned-teal hover:underline"
+                  >
+                    Ver
+                  </Link>
+                  <ActivarButton alumnoId={a.id} />
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
           <h1 className="text-2xl font-bold text-slate-800 font-display">Alumnos</h1>
           <p className="text-slate-500 text-sm mt-1">
-            Gestiona los estudiantes inscritos en la plataforma
+            {alumnos.length} alumno{alumnos.length !== 1 ? "s" : ""} en total
           </p>
         </div>
         <button
@@ -63,30 +119,30 @@ export default function AlumnosClient({ alumnos, cursos }: { alumnos: Alumno[]; 
         </button>
       </div>
 
-      <div className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden flex flex-col">
+      <div className="bg-white rounded-2xl border border-slate-100 shadow-sm overflow-hidden flex flex-col">
         {/* Barra de herramientas */}
-        <div className="p-4 border-b border-slate-100 flex flex-col sm:flex-row gap-4 bg-slate-50/50">
+        <div className="p-4 border-b border-slate-100 flex flex-col sm:flex-row gap-4">
           <div className="relative flex-1">
-            <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" size={18} />
+            <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" size={16} />
             <input
               type="text"
               placeholder="Buscar por alumno o tutor..."
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              className="w-full pl-10 pr-4 py-2 bg-white border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-teal-500/20 focus:border-teal-500"
+              className="w-full pl-9 pr-4 py-2 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-aned-teal/20 focus:border-aned-teal transition-all"
             />
           </div>
-          <div className="relative shrink-0 sm:w-48">
-            <Filter className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" size={18} />
+          <div className="relative shrink-0 sm:w-44">
+            <Filter className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" size={14} />
             <select
               value={filterEstado}
               onChange={(e) => setFilterEstado(e.target.value)}
-              className="w-full pl-10 pr-8 py-2 bg-white border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-teal-500/20 focus:border-teal-500 appearance-none"
+              className="w-full pl-9 pr-4 py-2 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-aned-teal/20 appearance-none"
             >
-              <option value="todos">Todos los estados</option>
+              <option value="todos">Todos</option>
               <option value="activo">Activos</option>
-              <option value="inactivo">Inactivos</option>
               <option value="pendiente">Pendientes</option>
+              <option value="inactivo">Inactivos</option>
             </select>
           </div>
         </div>
@@ -97,8 +153,8 @@ export default function AlumnosClient({ alumnos, cursos }: { alumnos: Alumno[]; 
             <thead className="bg-slate-50 border-b border-slate-100 text-slate-500 text-xs uppercase font-semibold">
               <tr>
                 <th className="px-6 py-4 font-medium">Alumno</th>
-                <th className="px-6 py-4 font-medium hidden md:table-cell">Contacto</th>
-                <th className="px-6 py-4 font-medium">Curso / Grado</th>
+                <th className="px-6 py-4 font-medium hidden md:table-cell">Tutor / Teléfono</th>
+                <th className="px-6 py-4 font-medium">Nivel</th>
                 <th className="px-6 py-4 font-medium">Estado</th>
                 <th className="px-6 py-4 font-medium text-right">Acciones</th>
               </tr>
@@ -107,45 +163,47 @@ export default function AlumnosClient({ alumnos, cursos }: { alumnos: Alumno[]; 
               {filteredAlumnos.length === 0 ? (
                 <tr>
                   <td colSpan={5} className="px-6 py-12 text-center">
-                    <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-slate-100 mb-3">
-                      <Search className="text-slate-400" size={24} />
-                    </div>
                     <p className="text-slate-500 font-medium">No se encontraron alumnos</p>
                     <p className="text-slate-400 text-sm mt-1">Intenta con otros términos de búsqueda</p>
                   </td>
                 </tr>
               ) : (
                 filteredAlumnos.map((alumno) => (
-                  <tr key={alumno.id} className="hover:bg-slate-50/50 transition-colors group">
+                  <tr key={alumno.id} className="hover:bg-aned-cream/30 transition-colors group">
                     <td className="px-6 py-4">
-                      <p className="font-medium text-slate-800">{alumno.nombreAlumno}</p>
-                      <p className="text-xs text-slate-400 mt-0.5">
-                        Origen: <span className="capitalize">{alumno.origen}</span>
-                      </p>
+                      <div className="flex items-center gap-3">
+                        <div className="w-9 h-9 rounded-xl bg-aned-teal/10 flex items-center justify-center font-bold text-aned-teal shrink-0">
+                          {alumno.nombreAlumno.charAt(0)}
+                        </div>
+                        <div>
+                          <p className="font-semibold text-slate-800">{alumno.nombreAlumno}</p>
+                          {alumno.origen === "landing" && alumno.estado === "pendiente" && (
+                            <span className="text-[10px] font-bold text-aned-orange bg-aned-orange/10 px-1.5 py-0.5 rounded-full">
+                              🆕 Nuevo
+                            </span>
+                          )}
+                        </div>
+                      </div>
                     </td>
                     <td className="px-6 py-4 hidden md:table-cell">
-                      <p className="text-slate-800">{alumno.nombreTutor}</p>
-                      <p className="text-xs text-slate-500">{alumno.telefonoTutor}</p>
+                      <p className="text-slate-700">{alumno.nombreTutor}</p>
+                      <p className="text-xs text-slate-400">{alumno.telefonoTutor}</p>
                     </td>
                     <td className="px-6 py-4">
-                      <p className="text-slate-800 font-medium">{alumno.curso?.nombre || "Sin curso"}</p>
-                      <p className="text-xs text-slate-500">{alumno.grado}</p>
+                      <p className="text-slate-700 font-medium">{alumno.grado}</p>
+                      <p className="text-xs text-slate-400">{alumno.curso?.nombre || "Sin nivel"}</p>
                     </td>
                     <td className="px-6 py-4">
-                      <span
-                        className={`inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold capitalize ${
-                          STATUS_COLORS[alumno.estado] || "bg-slate-100 text-slate-700"
-                        }`}
-                      >
+                      <span className={`inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold capitalize ${STATUS_COLORS[alumno.estado] || "bg-slate-100 text-slate-600"}`}>
                         {alumno.estado}
                       </span>
                     </td>
                     <td className="px-6 py-4 text-right">
                       <Link
                         href={`/maestra/dashboard/alumnos/${alumno.id}`}
-                        className="inline-flex items-center justify-center px-3 py-1.5 rounded-lg text-aned-teal bg-aned-cream hover:bg-teal-100 font-medium text-xs transition-colors"
+                        className="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-aned-teal bg-aned-cream hover:bg-teal-100 font-medium text-xs transition-colors"
                       >
-                        Administrar
+                        Ver perfil
                       </Link>
                     </td>
                   </tr>
@@ -156,11 +214,7 @@ export default function AlumnosClient({ alumnos, cursos }: { alumnos: Alumno[]; 
         </div>
       </div>
 
-      <AlumnoModal 
-        isOpen={isModalOpen} 
-        onClose={() => setIsModalOpen(false)} 
-        cursos={cursos} 
-      />
+      <AlumnoModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} cursos={cursos} />
     </div>
   );
 }

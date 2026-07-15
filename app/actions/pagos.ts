@@ -204,3 +204,48 @@ export async function generarMensualidadesMesActual() {
     return { error: "Ocurrió un error al generar las mensualidades." };
   }
 }
+
+export async function registrarAbono(pagoId: string, montoAbono: number) {
+  const { usuarioId } = await verifySession();
+
+  if (!montoAbono || montoAbono <= 0) {
+    return { error: "El monto del abono debe ser mayor a 0." };
+  }
+
+  try {
+    const pagoExistente = await prisma.pago.findUnique({ where: { id: pagoId } });
+    if (!pagoExistente) return { error: "Pago no encontrado." };
+
+    const nuevoMontoPagado = pagoExistente.montoPagado + montoAbono;
+    let estado = "parcial";
+    if (nuevoMontoPagado >= pagoExistente.montoAcordado) {
+      estado = "pagado";
+    }
+
+    const pago = await prisma.pago.update({
+      where: { id: pagoId },
+      data: {
+        montoPagado: nuevoMontoPagado,
+        estado,
+        fechaPago: estado === "pagado" ? new Date() : pagoExistente.fechaPago,
+      },
+      include: { alumno: { select: { nombreAlumno: true } } },
+    });
+
+    await registrarActividad({
+      usuarioId,
+      accion: "editar",
+      entidad: "pago",
+      entidadId: pagoId,
+      detalle: `Abono de $${montoAbono} para ${pago.alumno.nombreAlumno} (${pago.mes}/${pago.anio}). Total pagado: $${nuevoMontoPagado}`,
+    });
+
+    revalidatePath("/maestra/dashboard/pagos");
+    revalidatePath(`/maestra/dashboard/alumnos/${pago.alumnoId}`);
+    return { success: true };
+  } catch (error) {
+    console.error("Error al registrar abono:", error);
+    return { error: "Ocurrió un error al registrar el abono." };
+  }
+}
+

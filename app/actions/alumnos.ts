@@ -121,3 +121,30 @@ export async function eliminarAlumno(id: string) {
     return { error: "Ocurrió un error al eliminar el alumno." };
   }
 }
+
+export async function activarAlumno(id: string) {
+  const { usuarioId } = await verifySession();
+
+  try {
+    const alumno = await prisma.alumno.update({
+      where: { id },
+      data: { estado: "activo" },
+    });
+
+    await registrarActividad({
+      usuarioId,
+      accion: "editar",
+      entidad: "alumno",
+      entidadId: id,
+      detalle: `Alumno activado: ${alumno.nombreAlumno}`,
+    });
+
+    revalidatePath("/maestra/dashboard/alumnos");
+    revalidatePath(`/maestra/dashboard/alumnos/${id}`);
+    return { success: true };
+  } catch (error) {
+    console.error("Error al activar alumno:", error);
+    return { error: "Ocurrió un error al activar el alumno." };
+  }
+}
+

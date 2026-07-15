@@ -121,14 +121,17 @@ export default function AlumnoModal({ alumno, cursos, isOpen, onClose }: AlumnoM
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-slate-600 mb-1">Grado escolar</label>
-                  <input
+                  <label className="block text-sm font-medium text-slate-600 mb-1">Nivel educativo</label>
+                  <select
                     name="grado"
-                    defaultValue={alumno?.grado}
+                    defaultValue={alumno?.grado || ""}
                     required
-                    placeholder="Ej. 3ro Primaria"
-                    className="w-full px-3 py-2 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500/20 focus:border-teal-500"
-                  />
+                    className="w-full px-3 py-2 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500/20 focus:border-teal-500 bg-white"
+                  >
+                    <option value="">Selecciona el nivel</option>
+                    <option value="Preescolar">Preescolar (3-5 años)</option>
+                    <option value="Primaria">Primaria (6-11 años)</option>
+                  </select>
                 </div>
               </div>
 
