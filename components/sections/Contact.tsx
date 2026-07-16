@@ -44,7 +44,7 @@ export default function Contact() {
                 </span>
                 <div>
                   <p className="font-bold text-slate-800">Dirección</p>
-                  <a href="https://maps.app.goo.gl/LjBUGcizDRS3tWtB8?g_st=aw" target="_blank" rel="noopener noreferrer" className="text-sm text-slate-600 hover:text-aned-orange transition-colors block">
+                  <a href="https://maps.app.goo.gl/9B7NcxMZj2KZYoHX8?g_st=aw" target="_blank" rel="noopener noreferrer" className="text-sm text-slate-600 hover:text-aned-orange transition-colors block">
                     Ignacio Allende 409, Occidental,<br />
                     25640 Allende, Coah.
                   </a>
