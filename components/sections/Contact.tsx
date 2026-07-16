@@ -46,7 +46,7 @@ export default function Contact() {
                   <p className="font-bold text-slate-800">Dirección</p>
                   <a href="https://maps.app.goo.gl/LjBUGcizDRS3tWtB8?g_st=aw" target="_blank" rel="noopener noreferrer" className="text-sm text-slate-600 hover:text-aned-orange transition-colors block">
                     Ignacio Allende 409, Occidental,<br />
-                    25640 Frontera, Coah.
+                    25640 Allende, Coah.
                   </a>
                 </div>
               </li>
@@ -56,7 +56,7 @@ export default function Contact() {
           <div className="overflow-hidden rounded-3xl shadow-xl">
             <iframe
               title="Mapa de ubicación"
-              src="https://www.google.com/maps?q=Ignacio+Allende+409,+Occidental,+25640+Frontera,+Coah.&z=17&output=embed"
+              src="https://www.google.com/maps?q=Ignacio+Allende+409,+Occidental,+25640+Allende,+Coah.&z=17&output=embed"
               className="h-[420px] w-full border-0"
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
