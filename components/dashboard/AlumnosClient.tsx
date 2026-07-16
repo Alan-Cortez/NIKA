@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Plus, Search, Filter, Sparkles } from "lucide-react";
 import AlumnoModal from "./AlumnoModal";
 import { activarAlumno } from "@/app/actions/alumnos";
+import AvatarAlumno from "./AvatarAlumno";
 
 interface Curso {
   id: string;
@@ -81,9 +82,7 @@ export default function AlumnosClient({ alumnos, cursos }: { alumnos: Alumno[]; 
           <div className="flex flex-wrap gap-3">
             {nuevos.map((a) => (
               <div key={a.id} className="flex items-center gap-3 bg-white rounded-xl border border-aned-orange/20 px-4 py-2.5 shadow-sm">
-                <div className="w-8 h-8 rounded-full bg-aned-orange/10 flex items-center justify-center font-bold text-aned-orange text-sm">
-                  {a.nombreAlumno.charAt(0)}
-                </div>
+                <AvatarAlumno nombre={a.nombreAlumno} size={32} rounded="full" />
                 <div className="min-w-0">
                   <p className="text-sm font-semibold text-slate-800 truncate">{a.nombreAlumno}</p>
                   <p className="text-xs text-slate-400">{a.grado}</p>
@@ -172,9 +171,7 @@ export default function AlumnosClient({ alumnos, cursos }: { alumnos: Alumno[]; 
                   <tr key={alumno.id} className="hover:bg-aned-cream/30 transition-colors group">
                     <td className="px-6 py-4">
                       <div className="flex items-center gap-3">
-                        <div className="w-9 h-9 rounded-xl bg-aned-teal/10 flex items-center justify-center font-bold text-aned-teal shrink-0">
-                          {alumno.nombreAlumno.charAt(0)}
-                        </div>
+                        <AvatarAlumno nombre={alumno.nombreAlumno} size={36} rounded="xl" />
                         <div>
                           <p className="font-semibold text-slate-800">{alumno.nombreAlumno}</p>
                           {alumno.origen === "landing" && alumno.estado === "pendiente" && (

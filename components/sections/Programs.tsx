@@ -5,14 +5,14 @@ const programs = [
     title: "Preescolar",
     age: "3 – 5 años",
     description: "Lectoescritura, números y habilidades sociales en un ambiente alegre.",
-    image: "/images/classroom.jpg",
+    image: "/images/preescolar.jpg",
     color: "bg-aned-teal",
   },
   {
     title: "Primaria",
     age: "6 – 11 años",
     description: "Refuerzo en lectura, tareas, comprensión y acompañamiento escolar.",
-    image: "/images/reading.jpg",
+    image: "/images/primaria.jpg",
     color: "bg-aned-blue",
   },
 ];

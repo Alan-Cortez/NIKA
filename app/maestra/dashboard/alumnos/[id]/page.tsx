@@ -4,6 +4,7 @@ import Link from "next/link";
 import { ChevronLeft, User, Calendar, Phone, Mail, BookOpen } from "lucide-react";
 import AlumnoActions from "@/components/dashboard/AlumnoActions";
 import NotasAlumno from "@/components/dashboard/NotasAlumno";
+import AvatarAlumno from "@/components/dashboard/AvatarAlumno";
 
 export const dynamic = "force-dynamic";
 
@@ -64,11 +65,7 @@ export default async function AlumnoDetallePage({
       {/* Main Info Card */}
       <div className="bg-white rounded-3xl border border-slate-100 shadow-sm overflow-hidden">
         <div className="p-6 md:p-8 flex flex-col md:flex-row gap-6 items-start md:items-center border-b border-slate-100 bg-aned-cream/40">
-          <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-aned-teal to-teal-600 text-white flex items-center justify-center shrink-0 shadow-inner">
-            <span className="text-3xl font-bold font-display">
-              {alumno.nombreAlumno.charAt(0).toUpperCase()}
-            </span>
-          </div>
+          <AvatarAlumno nombre={alumno.nombreAlumno} size={80} rounded="2xl" />
           <div className="flex-1">
             <div className="flex flex-wrap items-center gap-3 mb-2">
               <h1 className="text-2xl font-bold text-slate-800 font-display">{alumno.nombreAlumno}</h1>

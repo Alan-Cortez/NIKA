@@ -22,7 +22,7 @@ export default function Enrollment() {
 
           <div className="relative mt-8 hidden overflow-hidden rounded-3xl shadow-2xl lg:block">
             <Image
-              src="/images/classroom.jpg"
+              src="/images/enrollment.jpg"
               alt="Niño feliz en clase"
               width={500}
               height={400}

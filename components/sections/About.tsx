@@ -26,7 +26,7 @@ export default function About() {
         <div className="grid grid-cols-2 gap-3">
           <div className="relative col-span-2 h-56 overflow-hidden rounded-3xl shadow-lg">
             <Image
-              src="/images/classroom.jpg"
+              src="/images/about1.jpg"
               alt="Niños en clase"
               fill
               sizes="(max-width: 1024px) 100vw, 50vw"
@@ -35,7 +35,7 @@ export default function About() {
           </div>
           <div className="relative h-40 overflow-hidden rounded-3xl shadow-lg">
             <Image
-              src="/images/reading.jpg"
+              src="/images/about2.jpg"
               alt="Actividad educativa"
               fill
               sizes="(max-width: 1024px) 50vw, 25vw"
@@ -44,7 +44,7 @@ export default function About() {
           </div>
           <div className="relative h-40 overflow-hidden rounded-3xl shadow-lg">
             <Image
-              src="/images/hero.jpg"
+              src="/images/about3.jpg"
               alt="Aprendizaje lúdico"
               fill
               sizes="(max-width: 1024px) 50vw, 25vw"

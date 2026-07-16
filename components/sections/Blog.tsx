@@ -5,19 +5,19 @@ const posts = [
     title: "Refuerzo escolar con atención cercana",
     description:
       "Ideal para alumnos que necesitan apoyo en tareas, comprensión, lectura o seguimiento más personalizado.",
-    image: "/images/reading.jpg",
+    image: "/images/blog1.jpg",
   },
   {
     title: "Experiencia en colegios y centros de apoyo",
     description:
       "La experiencia en distintos entornos educativos permite adaptar mejor cada clase a lo que tu hijo necesita.",
-    image: "/images/classroom.jpg",
+    image: "/images/blog2.jpg",
   },
   {
     title: "Comunicación clara con las familias",
     description:
       "Cada proceso busca que mamá o papá tengan información cercana sobre avances, necesidades y siguientes pasos.",
-    image: "/images/hero.jpg",
+    image: "/images/blog3.jpg",
   },
 ];
 
