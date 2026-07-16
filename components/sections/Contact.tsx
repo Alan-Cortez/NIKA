@@ -1,4 +1,4 @@
-import { Share2, Phone } from "lucide-react";
+import { Share2, Phone, MapPin } from "lucide-react";
 
 export default function Contact() {
   return (
@@ -38,13 +38,25 @@ export default function Contact() {
                   </a>
                 </div>
               </li>
+              <li className="flex items-start gap-4">
+                <span className="flex h-11 w-11 items-center justify-center rounded-full bg-aned-orange/10 text-aned-orange">
+                  <MapPin className="h-5 w-5" />
+                </span>
+                <div>
+                  <p className="font-bold text-slate-800">Dirección</p>
+                  <a href="https://maps.app.goo.gl/LjBUGcizDRS3tWtB8?g_st=aw" target="_blank" rel="noopener noreferrer" className="text-sm text-slate-600 hover:text-aned-orange transition-colors block">
+                    Calle Ignacio Allende 409,<br />
+                    Colonia Ampliación Ignacio Allende
+                  </a>
+                </div>
+              </li>
             </ul>
           </div>
 
           <div className="overflow-hidden rounded-3xl shadow-xl">
             <iframe
               title="Mapa de ubicación"
-              src="https://www.google.com/maps?q=28.3560913,-100.8652254&z=17&output=embed"
+              src="https://www.google.com/maps?q=calle+ignacio+allende+409,+Ampliación+ignacio+allende&z=17&output=embed"
               className="h-[420px] w-full border-0"
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
