@@ -33,7 +33,7 @@ export default function Contact() {
                 </span>
                 <div>
                   <p className="font-bold text-slate-800">Facebook</p>
-                  <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" className="text-sm text-slate-600 hover:text-aned-blue transition-colors">
+                  <a href="https://www.facebook.com/share/1GWrRvLFqk/" target="_blank" rel="noopener noreferrer" className="text-sm text-slate-600 hover:text-aned-blue transition-colors">
                     Aned De la cruz
                   </a>
                 </div>
