@@ -97,6 +97,7 @@ export function proxy(req: NextRequest) {
       "font-src 'self' https://fonts.gstatic.com",
       "img-src 'self' data: blob: https://api.dicebear.com",
       "connect-src 'self'",
+      "worker-src 'self'",
       "frame-src 'self' https://www.google.com",
       "frame-ancestors 'none'",
     ].join("; ")
